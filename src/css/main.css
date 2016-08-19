@@ -1,6 +1,6 @@
 body {
   background-color: #777777;
-  color: #333333;
+  color: #888888;
 }
 
 .header {
@@ -8,5 +8,13 @@ body {
 }
 
 .threadList {
-    background-color: #666666;
+    background-color: #444444;
+}
+
+.threadList ul {
+  list-style-type: none;
+}
+
+.threadList ul li:nth-child(odd) {
+  background-color: #666666;
 }
