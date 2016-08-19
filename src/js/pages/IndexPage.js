@@ -4,7 +4,7 @@ var ThreadList = require('../components/ThreadList.js');
 
 var data = require('../mock_data.js');
 
-var Layout = React.createClass({
+var IndexPage = React.createClass({
   render: function() {
     return (
       <div className="container header">
@@ -15,4 +15,4 @@ var Layout = React.createClass({
   }
 });
 
-module.exports = Layout;
+module.exports = IndexPage;
