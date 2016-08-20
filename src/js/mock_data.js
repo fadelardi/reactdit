@@ -7,9 +7,9 @@ var data = {
         timestring: "xx hours ago",
         subforum: "subforum1",
         comments: [
-            {body: 'lol', author: 'Author1', date: '2016-01-01'},
-            {body: 'lel', author: 'Author2', date: '2016-01-02'},
-            {body: 'blah', author: 'Author3', date: '2016-01-02'}
+            {id: 1, body: 'lol', author: 'Author1', date: '2016-01-01'},
+            {id: 2, body: 'lel', author: 'Author2', date: '2016-01-02'},
+            {id: 3, body: 'blah', author: 'Author3', date: '2016-01-02'}
         ]
       },
       {
@@ -19,7 +19,7 @@ var data = {
         timestring: "xx hours ago",
         subforum: "subforum2",
         comments: [
-            {body: 'lel', author: 'Author1', date: '2016-01-01'},
+            {id: 1, body: 'lel', author: 'Author1', date: '2016-01-01'},
         ]
       },
       {
@@ -29,7 +29,7 @@ var data = {
         timestring: "xx hours ago",
         subforum: "subforum1",
         comments: [
-            {body: 'lel', author: 'Author1', date: '2016-01-01'},
+            {id: 2, body: 'lel', author: 'Author1', date: '2016-01-01'},
         ]
       },
       {
@@ -39,7 +39,7 @@ var data = {
         timestring: "xx hours ago",
         subforum: "subforum2",
         comments: [
-            {body: 'lel', author: 'Author1', date: '2016-01-01'},
+            {id: 1, body: 'lel', author: 'Author1', date: '2016-01-01'},
         ]
       },
       {
@@ -49,7 +49,7 @@ var data = {
         timestring: "xx hours ago",
         subforum: "subforum2",
         comments: [
-            {body: 'lel', author: 'Author1', date: '2016-01-01'},
+            {id: 1, body: 'lel', author: 'Author1', date: '2016-01-01'},
         ]
       },
       {
@@ -59,7 +59,7 @@ var data = {
         timestring: "xx hours ago",
         subforum: "subforum",
         comments: [
-            {body: 'lel', author: 'Author1', date: '2016-01-01'},
+            {id: 1, body: 'lel', author: 'Author1', date: '2016-01-01'},
         ]
       }
     ],

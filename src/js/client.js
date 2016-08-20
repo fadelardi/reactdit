@@ -15,7 +15,7 @@ var app = document.getElementById('app');
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={IndexPage} />
-    <Route path="/thread" component={ThreadPage} />
+    <Route path="/thread/:threadId" component={ThreadPage} />
     <Route path="/user" component={UserPage} />
   </Router>,
   app);
