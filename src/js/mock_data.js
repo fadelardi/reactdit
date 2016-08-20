@@ -1,10 +1,76 @@
-var data = [
-  {id: 1, author: "Author1", title: "Title1", timestring: "xx hours ago", subforum: "subforum", comments: "99"},
-  {id: 2, author: "Author2", title: "Title2", timestring: "xx hours ago", subforum: "subforum", comments: "99"},
-  {id: 3, author: "Author3", title: "Title3", timestring: "xx hours ago", subforum: "subforum", comments: "99"},
-  {id: 4, author: "Author4", title: "Title4", timestring: "xx hours ago", subforum: "subforum", comments: "99"},
-  {id: 5, author: "Author5", title: "Title5", timestring: "xx hours ago", subforum: "subforum", comments: "99"},
-  {id: 6, author: "Author6", title: "Title6", timestring: "xx hours ago", subforum: "subforum", comments: "99"}
-];
+var data = {
+    'threads' : [
+      {
+        id: 1,
+        author: "Author1",
+        title: "Text Post #1",
+        timestring: "xx hours ago",
+        subforum: "subforum1",
+        comments: [
+            {body: 'lol', author: 'Author1', date: '2016-01-01'},
+            {body: 'lel', author: 'Author2', date: '2016-01-02'},
+            {body: 'blah', author: 'Author3', date: '2016-01-02'}
+        ]
+      },
+      {
+        id: 2,
+        author: "Author2",
+        title: "Text Post #2",
+        timestring: "xx hours ago",
+        subforum: "subforum2",
+        comments: [
+            {body: 'lel', author: 'Author1', date: '2016-01-01'},
+        ]
+      },
+      {
+        id: 3,
+        author: "Author3",
+        title: "Image Post #1",
+        timestring: "xx hours ago",
+        subforum: "subforum1",
+        comments: [
+            {body: 'lel', author: 'Author1', date: '2016-01-01'},
+        ]
+      },
+      {
+        id: 4,
+        author: "Author4",
+        title: "Link Post #1",
+        timestring: "xx hours ago",
+        subforum: "subforum2",
+        comments: [
+            {body: 'lel', author: 'Author1', date: '2016-01-01'},
+        ]
+      },
+      {
+        id: 5,
+        author: "Author5",
+        title: "Link Post #2",
+        timestring: "xx hours ago",
+        subforum: "subforum2",
+        comments: [
+            {body: 'lel', author: 'Author1', date: '2016-01-01'},
+        ]
+      },
+      {
+        id: 6,
+        author: "Author6",
+        title: "Title6",
+        timestring: "xx hours ago",
+        subforum: "subforum",
+        comments: [
+            {body: 'lel', author: 'Author1', date: '2016-01-01'},
+        ]
+      }
+    ],
+    'users': [
+      {username: 'Author1', browniepts: 99},
+      {username: 'Author2', browniepts: 99},
+      {username: 'Author3', browniepts: 99},
+      {username: 'Author4', browniepts: 99},
+      {username: 'Author5', browniepts: 99},
+      {username: 'Author6', browniepts: 99}
+    ]
+  };
 
 module.exports = data;
