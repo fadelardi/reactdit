@@ -7,11 +7,15 @@ body {
   background-color: #555555;
 }
 
-.threadList {
+.threadList, .commentList {
     background-color: #444444;
 }
 
 .threadList ul {
+  list-style-type: none;
+}
+
+.commentList ul {
   list-style-type: none;
 }
 
