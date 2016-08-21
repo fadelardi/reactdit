@@ -6,7 +6,7 @@ var threads = require('../mock_data.js').threads;
 
 var ThreadPage = React.createClass({
   getComments: function() {
-    var title = this.props.params.threadId;
+    var title = this.props.params.title;
     for (var i = 0; i < threads.length; i++) {
       if (title == threads[i].title) {
         return threads[i].comments;
