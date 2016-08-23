@@ -1,7 +1,8 @@
 var React = require('react');
 var Comment = require('./Comment.js');
+var observer = require('mobx-react').observer;
 
-var CommentList = React.createClass({
+var CommentList = observer(React.createClass({
   render: function() {
       var list = this.props.data.map(function(comment) {
         return (
@@ -19,6 +20,6 @@ var CommentList = React.createClass({
       </div>
     );
   }
-});
+}));
 
 module.exports = CommentList;

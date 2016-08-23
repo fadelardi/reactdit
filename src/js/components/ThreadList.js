@@ -1,9 +1,10 @@
 var React = require('react');
 var Thread = require('./Thread.js');
+var observer = require('mobx-react').observer;
 
-var ThreadList = React.createClass({
+var ThreadList = observer(React.createClass({
   render: function() {
-      var list = this.props.data.map(function(thread) {
+      var list = this.props.data.threads.map(function(thread) {
         return (
           <Thread key={thread.id} title={thread.title} author={thread.author} timestring={thread.timestring} subforum={thread.subforum} totalComments={thread.comments.length}  />
         );
@@ -17,6 +18,6 @@ var ThreadList = React.createClass({
       </div>
     );
   }
-});
+}));
 
 module.exports = ThreadList;

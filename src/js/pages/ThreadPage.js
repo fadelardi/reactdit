@@ -2,7 +2,8 @@ var React = require('react');
 var Header = require('../components/Header.js');
 var CommentList = require('../components/CommentList.js');
 
-var threads = require('../mock_data.js').threads;
+//Thread data
+var threads = require('../stores/ThreadStore.js').threads;
 
 var ThreadPage = React.createClass({
   getComments: function() {
