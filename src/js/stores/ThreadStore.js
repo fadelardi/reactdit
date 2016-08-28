@@ -1,11 +1,23 @@
-var observable = require('mobx').observable;
-var threadData = require('../mock_data.js').threads;
+var extendObservable = require('mobx').extendObservable;
+var action = require('mobx').action;
+var axios = require('axios');
 
 var ThreadStore = function() {
-  return observable({
-    id: Math.random(),
-    threads: threadData
+  this.id = Math.random();
+  this.load = function() {
+    var self = this;
+    axios.get('http://localhost:3000')
+    .then(function(res) {
+      self.threads = res.data;
+      self.loading = false;
+    });
+  };
+
+   extendObservable(this, {
+    loading: true,
+    threads: []
   });
 };
 
-module.exports = ThreadStore();
+
+module.exports = new ThreadStore();

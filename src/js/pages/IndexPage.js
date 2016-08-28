@@ -4,6 +4,8 @@ var ThreadList = require('../components/ThreadList.js');
 
 var ThreadStore = require('../stores/ThreadStore.js');
 
+ThreadStore.load();
+
 var IndexPage = React.createClass({
   render: function() {
     return (
