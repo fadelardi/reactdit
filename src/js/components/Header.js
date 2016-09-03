@@ -1,5 +1,5 @@
 var React = require('react');
-var UserBox = require('./UserBox.js');
+var UserBox = require('./UserBox');
 
 var Header = React.createClass({
   render: function() {

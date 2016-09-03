@@ -5,17 +5,22 @@ var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var browserHistory = require('react-router').browserHistory;
 
-//Pages
-var IndexPage = require('./pages/IndexPage.js');
-var ThreadPage = require('./pages/ThreadPage.js');
-var UserPage = require('./pages/UserPage.js');
+var Provider = require('react-redux').Provider;
+var Store = require('./store');
+
+//Containers
+var IndexPage = require('./containers/IndexPage');
+var ThreadPage = require('./containers/ThreadPage');
+var UserPage = require('./containers/UserPage');
 
 var app = document.getElementById('app');
 
 ReactDOM.render(
-  <Router history={browserHistory}>
-    <Route path="/" component={IndexPage} />
-    <Route path="/t/:title" component={ThreadPage} />
-    <Route path="/u/:username" component={UserPage} />
-  </Router>,
+  <Provider store={Store}>
+    <Router history={browserHistory}>
+      <Route path="/" component={IndexPage} />
+      <Route path="/t/:title" component={ThreadPage} />
+      <Route path="/u/:username" component={UserPage} />
+    </Router>
+  </Provider>,
   app);

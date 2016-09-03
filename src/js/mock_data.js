@@ -1,4 +1,4 @@
-var data = {
+module.exports = {
     'threads' : [
       {
         id: 1,
@@ -72,5 +72,3 @@ var data = {
       {username: 'Author6', browniepts: 99}
     ]
   };
-
-module.exports = data;

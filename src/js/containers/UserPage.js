@@ -1,5 +1,5 @@
 var React = require('react');
-var Header = require('../components/Header.js');
+var Header = require('../components/Header');
 
 var UserPage = React.createClass({
   render: function() {
