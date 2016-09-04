@@ -1,8 +1,8 @@
-var mockData = require('../mock_data');
+var axios = require('axios');
 
 module.exports.getThreads = function getThreads() {
   return {
-    type: 'THREADS_LIST',
-    payload: mockData.threads
-  };
+    type: 'FETCH_THREADS',
+    payload: axios.get('http://localhost:3000/')
+  }
 };
