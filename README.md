@@ -1,10 +1,12 @@
 # reactdit
 
-Reddit clone using ReactJS. It also provides a simple, server-side API (NodeJS). 
+Reddit-like app built with React (ES5). 
 
-Tech stack:
+Frontend tech stack:
 - ReactJS
-- MobX
-- webpack
+- Redux
+- webpack + babel
 - axios
+
+Backend:
 - Node + ExpressJS
