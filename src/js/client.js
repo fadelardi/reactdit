@@ -19,7 +19,7 @@ ReactDOM.render(
   <Provider store={Store}>
     <Router history={browserHistory}>
       <Route path="/" component={IndexPage} />
-      <Route path="/t/:title" component={ThreadPage} />
+      <Route path="/t/:id" component={ThreadPage} />
       <Route path="/u/:username" component={UserPage} />
     </Router>
   </Provider>,

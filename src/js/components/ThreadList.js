@@ -7,7 +7,7 @@ var ThreadList = React.createClass({
 
     var list = threads.map(function(thread) {
       return (
-        <Thread key={thread.id} title={thread.title} author={thread.author} timestring={thread.timestring} subforum={thread.subforum} totalComments={thread.comments.length}  />
+        <Thread key={thread.id} id={thread.id} title={thread.title} author={thread.author} timestring={thread.timestring} subforum={thread.subforum} totalComments={thread.comments.length}  />
       );
     });
 
