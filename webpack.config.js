@@ -14,10 +14,7 @@ module.exports = {
     loaders: [
       { test: /\.js?$/,
         exclude: /node_modules/,
-        query: {
-          'presets': ['react']
-        },
-        loader: "babel-loader" }
+        loaders: ["babel-loader?presets[]=react", "eslint-loader"] }
     ]
   },
   plugins: debug ? [] : [
