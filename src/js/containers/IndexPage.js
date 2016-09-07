@@ -15,6 +15,13 @@ var IndexPage = React.createClass({
       this.props.dispatch(threadActions.getThreads())
   },
 
+  componentWillReceiveProps: function(nextProps) {
+      if (this.props.params.forum != nextProps.params.forum) {
+        nextProps.dispatch(threadActions.getThreads(nextProps.params.forum));
+      }
+      this.setState(nextProps);
+  },
+
   render: function() {
     return (
       <div className="container header">
