@@ -1,5 +1,5 @@
 {
-  "name": "reddit-clone-react",
+  "name": "reactdit",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -16,6 +16,7 @@
     "babel-loader": "^6.2.4",
     "babel-preset-react": "^6.11.1",
     "express": "^4.14.0",
+    "pg": "^6.1.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-redux": "^4.4.5",
