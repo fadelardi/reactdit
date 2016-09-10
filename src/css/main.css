@@ -19,6 +19,14 @@ body {
   list-style-type: none;
 }
 
+.addComment {
+  background-color: #666666;
+}
+
+.addComment textarea {
+  width: 100%;
+}
+
 .threadList ul li:nth-child(odd) {
   background-color: #666666;
 }
