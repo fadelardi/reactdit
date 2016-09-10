@@ -9,7 +9,7 @@ var Provider = require('react-redux').Provider;
 var Store = require('./store');
 
 //Containers
-var IndexPage = require('./containers/IndexPage');
+var ForumPage = require('./containers/ForumPage');
 var ThreadPage = require('./containers/ThreadPage');
 var UserPage = require('./containers/UserPage');
 
@@ -18,8 +18,8 @@ var app = document.getElementById('app');
 ReactDOM.render(
   <Provider store={Store}>
     <Router history={browserHistory}>
-      <Route path="/" component={IndexPage}>
-        <Route path="/f/:forum" component={IndexPage} />
+      <Route path="/" component={ForumPage}>
+        <Route path="/f/:forum" component={ForumPage} />
       </Route>
       <Route path="/t/:id" component={ThreadPage} />
       <Route path="/u/:username" component={UserPage} />

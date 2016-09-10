@@ -1,26 +1,23 @@
 var initialState = {
-  threads: [],
+  thread: [],
   loading: false,
   loaded: false,
   error: null
 };
 
-function threadsReducer(state, action) {
+function threadReducer(state, action) {
   state = state || initialState;
   switch(action.type) {
-    case 'FETCH_THREADS_PENDING':
     case 'FETCH_THREAD_PENDING':
       return Object.assign({}, state, {
         loading: true
       });
-    case 'FETCH_THREADS_FULFILLED':
     case 'FETCH_THREAD_FULFILLED':
       return Object.assign({}, state, {
-        threads: action.payload.data,
+        thread: action.payload.data,
         loading: false,
         loaded: true
       });
-    case 'FETCH_THREADS_REJECTED':
     case 'FETCH_THREAD_REJECTED':
       return Object.assign({}, state, {
         error: action.payload.data,
@@ -32,4 +29,4 @@ function threadsReducer(state, action) {
 
 }
 
-module.exports = threadsReducer;
+module.exports = threadReducer;

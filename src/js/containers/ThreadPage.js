@@ -7,7 +7,7 @@ var threadActions = require('../actions/threadActions');
 
 var mapStateToProps = function(store) {
   return {
-    thread: store.threads
+    comments: store.thread.thread
   }
 }
 
@@ -20,7 +20,7 @@ var ThreadPage = React.createClass({
     return (
       <div className="container">
         <Header />
-        <CommentList thread={this.props.thread} />
+        <CommentList comments={this.props.comments} />
       </div>
     );
   }

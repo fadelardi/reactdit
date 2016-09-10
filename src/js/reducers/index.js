@@ -1,8 +1,8 @@
 var combineReducers = require('redux').combineReducers;
-var threads = require('./threadsReducer');
 
 var rootReducer = combineReducers({
-  threads: threads
+  forum: require('./forumReducer'),
+  thread: require('./threadReducer')
 });
 
 module.exports = rootReducer;

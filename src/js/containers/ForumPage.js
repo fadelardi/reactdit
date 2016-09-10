@@ -2,22 +2,22 @@ var React = require('react');
 var connect = require('react-redux').connect;
 var Header = require('../components/Header');
 var ThreadList = require('../components/ThreadList');
-var threadActions = require('../actions/threadActions');
+var forumActions = require('../actions/forumActions');
 
 var mapStateToProps = function(store) {
   return {
-    threads: store.threads
+    threads: store.forum.threads
   }
 }
 
-var IndexPage = React.createClass({
+var ForumPage = React.createClass({
   componentWillMount: function() {
-      this.props.dispatch(threadActions.getThreads())
+      this.props.dispatch(forumActions.getThreads())
   },
 
   componentWillReceiveProps: function(nextProps) {
       if (this.props.params.forum != nextProps.params.forum) {
-        nextProps.dispatch(threadActions.getThreads(nextProps.params.forum));
+        nextProps.dispatch(forumActions.getThreads(nextProps.params.forum));
       }
       this.setState(nextProps);
   },
@@ -34,4 +34,4 @@ var IndexPage = React.createClass({
 
 
 
-module.exports = connect(mapStateToProps)(IndexPage);
+module.exports = connect(mapStateToProps)(ForumPage);
