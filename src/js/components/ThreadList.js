@@ -4,10 +4,10 @@ var Thread = require('./Thread');
 var ThreadList = React.createClass({
   render: function() {
     var threads = this.props.threads.threads;
-
+    
     var list = threads.map(function(thread) {
       return (
-        <Thread key={thread.id} id={thread.id} title={thread.title} author={thread.author} timestring={thread.timestring} forum={thread.forum} totalComments={thread.comments.length}  />
+        <Thread key={thread.id} id={thread.id} title={thread.title} author={thread.author} timestring={thread.timestring} forum={thread.forum} totalComments="0"  />
       );
     });
 
