@@ -2,6 +2,7 @@ var React = require('react');
 var connect = require('react-redux').connect;
 var Header = require('../components/Header');
 var CommentList = require('../components/CommentList');
+var AddComment = require('./AddComment')
 var threadActions = require('../actions/threadActions');
 
 
@@ -21,6 +22,7 @@ var ThreadPage = React.createClass({
       <div className="container">
         <Header />
         <CommentList comments={this.props.comments} />
+        <AddComment threadId={this.props.params.id}/>
       </div>
     );
   }

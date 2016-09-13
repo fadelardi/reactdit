@@ -1,17 +1,27 @@
 var React = require('react');
 var connect = require('react-redux').connect;
+var threadActions = require('../actions/threadActions');
 
 
 var AddComment = React.createClass({
   handleSubmit: function() {
-    console.log('submit post to backend')
+    var data, commentValue = this.refs.comment.value;
+    if (commentValue != '') {
+      data = {
+        id: this.props.threadId,
+        uid: 1,
+        comment: this.refs.comment.value
+      }
+
+      this.props.dispatch(threadActions.addComment(data));
+    }
   },
 
   render: function() {
     return (
       <div className="addComment col-md-12">
         <div>Add your comment:</div>
-        <textarea id="comment"></textarea>
+        <textarea ref="comment" />
         <div><button onClick={this.handleSubmit}>Submit Post</button></div>
       </div>
     );

@@ -1,6 +1,5 @@
 var React = require('react');
 var Comment = require('./Comment');
-var AddComment = require('../containers/AddComment')
 
 var CommentList = React.createClass({
   render: function() {
@@ -20,7 +19,6 @@ var CommentList = React.createClass({
         <ul>
           {commentLis}
         </ul>
-        <AddComment />
         </div>
       </div>
     );
