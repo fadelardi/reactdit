@@ -17,7 +17,7 @@ module.exports.addComment = function(data) {
       dispatch(self.getThread(data.id));
     })
     .catch(function(err) {
-      dispatch({type: 'ADD_COMMENT_REJECTED'});
+      dispatch({type: 'ADD_COMMENT_REJECTED', payload: err});
     });
   };
 };

@@ -7,13 +7,14 @@ var withRouter = require('react-router').withRouter;
 
 
 var NewThreadPage = withRouter(React.createClass({
+  displayName: 'NewThreadPage',
+
   handleSubmit: function(form) {
       form.uid = 1;
       this.props.dispatch(forumActions.addThread(form, this.props.router));
   },
 
   render: function() {
-    console.log(this.props.params)
     return (
       <div className="container header">
         <Header />

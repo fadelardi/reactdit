@@ -11,7 +11,7 @@ var AddComment = React.createClass({
         id: this.props.threadId,
         uid: 1,
         comment: this.refs.comment.value
-      }
+      };
 
       this.props.dispatch(threadActions.addComment(data));
     }

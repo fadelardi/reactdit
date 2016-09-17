@@ -7,12 +7,12 @@ var forumActions = require('../actions/forumActions');
 var mapStateToProps = function(store) {
   return {
     threads: store.forum.threads
-  }
-}
+  };
+};
 
 var ForumPage = React.createClass({
   componentWillMount: function() {
-      this.props.dispatch(forumActions.getThreads())
+      this.props.dispatch(forumActions.getThreads());
   },
 
   componentWillReceiveProps: function(nextProps) {

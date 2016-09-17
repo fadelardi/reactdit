@@ -4,7 +4,7 @@ module.exports.getThreads = function(forum) {
   return {
     type: 'FETCH_THREADS',
     payload: axios.get('http://localhost:3000' + (typeof forum != 'undefined' ? '/f/' + encodeURIComponent(forum) : ''))
-  }
+  };
 };
 
 module.exports.addThread = function(data, router) {
@@ -16,7 +16,7 @@ module.exports.addThread = function(data, router) {
       dispatch({type: 'ADD_THREAD_FULFILLED', payload: res});
     })
     .catch(function(err) {
-      dispatch({type: 'ADD_THREAD_REJECTED'});
+      dispatch({type: 'ADD_THREAD_REJECTED', payload: err});
     });
   };
-}
+};

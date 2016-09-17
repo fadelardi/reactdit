@@ -2,19 +2,19 @@ var React = require('react');
 var connect = require('react-redux').connect;
 var Header = require('../components/Header');
 var CommentList = require('../components/CommentList');
-var AddComment = require('./AddComment')
+var AddComment = require('./AddComment');
 var threadActions = require('../actions/threadActions');
 
 
 var mapStateToProps = function(store) {
   return {
     comments: store.thread.thread
-  }
-}
+  };
+};
 
 var ThreadPage = React.createClass({
   componentWillMount: function() {
-      this.props.dispatch(threadActions.getThread(this.props.params.id))
+      this.props.dispatch(threadActions.getThread(this.props.params.id));
   },
 
   render: function() {

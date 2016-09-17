@@ -11,13 +11,12 @@ var NewThreadForm = React.createClass({
       fid: form.forum.value,
       content: form.content.value,
       url: form.url.value
-    }
+    };
 
     this.props.handleSubmit(values);
   },
 
   forumField: function (forum) {
-    console.log(forum);
     if (typeof forum == 'undefined') {
       return (
         <div className="form-group">
