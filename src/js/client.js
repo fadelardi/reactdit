@@ -12,6 +12,7 @@ var Store = require('./store');
 var ForumPage = require('./containers/ForumPage');
 var ThreadPage = require('./containers/ThreadPage');
 var UserPage = require('./containers/UserPage');
+var NewThreadPage = require('./containers/NewThreadPage');
 
 var app = document.getElementById('app');
 
@@ -20,6 +21,9 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={ForumPage}>
         <Route path="/f/:forum" component={ForumPage} />
+      </Route>
+      <Route path="/new" component={NewThreadPage}>
+        <Route path="/f/:forum/new" component={NewThreadPage} />
       </Route>
       <Route path="/t/:id" component={ThreadPage} />
       <Route path="/u/:username" component={UserPage} />

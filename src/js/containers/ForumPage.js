@@ -25,7 +25,7 @@ var ForumPage = React.createClass({
   render: function() {
     return (
       <div className="container header">
-        <Header />
+        <Header forum={this.props.params.forum} />
         <ThreadList threads={this.props.threads} />
       </div>
     );
