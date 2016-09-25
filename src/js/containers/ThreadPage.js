@@ -22,7 +22,7 @@ var ThreadPage = React.createClass({
       <div className="container">
         <Header />
         <CommentList comments={this.props.comments} />
-        <AddComment threadId={this.props.params.id}/>
+        <AddComment threadId={this.props.params.id} />
       </div>
     );
   }
