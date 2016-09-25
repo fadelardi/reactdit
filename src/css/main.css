@@ -27,6 +27,16 @@ body {
   width: 100%;
 }
 
+li.comment .body {
+  padding: 10px;
+}
+
+li.comment .options {
+  background-color: #666666;
+  border-bottom: 1px solid black;
+  margin-bottom: 5px;
+}
+
 .threadList ul li:nth-child(odd) {
   background-color: #666666;
 }

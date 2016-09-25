@@ -9,6 +9,7 @@ var AddComment = React.createClass({
     if (commentValue != '') {
       data = {
         id: this.props.threadId,
+        parent_id: (typeof this.props.commentId == 'undefined') ? 0 : this.props.commentId,
         uid: 1,
         comment: this.refs.comment.value
       };
