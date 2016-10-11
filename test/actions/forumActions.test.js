@@ -17,26 +17,28 @@ describe('forum actions', function() {
     moxios.uninstall();
   });
 
-  it('will get no threads', function() {
-    var store = mockStore({threads: []});
-    var mockResponse = [
-        {type: 'FETCH_THREADS_PENDING'},
-        {type: 'FETCH_THREADS_FULFILLED', payload: { data: [] }}
-    ]
+  describe('addThread action', function() {
+    it('will get no threads', function() {
+      var store = mockStore({threads: []});
+      var mockResponse = [
+          {type: 'FETCH_THREADS_PENDING'},
+          {type: 'FETCH_THREADS_FULFILLED', payload: { data: [] }}
+      ]
 
 
-    moxios.wait(function() {
-      var request = moxios.requests.mostRecent();
-      request.respondWith({
-        status: 200,
-        response: []
+      moxios.wait(function() {
+        var request = moxios.requests.mostRecent();
+        request.respondWith({
+          status: 200,
+          response: []
+        });
       });
-    });
 
-    return store.dispatch(forumActions.getThreads()).then(function() {
-      expect(store.getActions()[0].type).to.equal(mockResponse[0].type);
-      expect(store.getActions()[1].type).to.equal(mockResponse[1].type);
-      expect(store.getActions()[1].payload.data).to.eql(mockResponse[1].payload.data);
+      return store.dispatch(forumActions.getThreads()).then(function() {
+        expect(store.getActions()[0].type).to.equal(mockResponse[0].type);
+        expect(store.getActions()[1].type).to.equal(mockResponse[1].type);
+        expect(store.getActions()[1].payload.data).to.eql(mockResponse[1].payload.data);
+      });
     });
   });
 });
