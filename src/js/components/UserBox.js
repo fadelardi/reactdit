@@ -3,7 +3,7 @@ var UserBox = React.createClass({
   render: function() {
     return (
       <div className="userBox">
-        This is where the user info is
+        {this.props.username}
       </div>
     );
   }

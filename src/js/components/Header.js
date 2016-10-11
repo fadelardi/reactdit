@@ -10,13 +10,13 @@ var Header = React.createClass({
     }
     return link;
   },
-  
+
   render: function() {
     return (
       <div className="col-md-12 header">
         <div className="col-md-4"><Link to="/">Index</Link></div>
         <div className="col-md-4"><Link to={this.createNewLink(this.props.forum)}>Create Thread</Link></div>
-        <div className="col-md-4"><UserBox /></div>
+        <div className="col-md-4"><UserBox username="username" /></div>
       </div>
     );
   }
