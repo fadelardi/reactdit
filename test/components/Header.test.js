@@ -21,8 +21,14 @@ describe('Header component', function() {
     expect(wrapper.text()).to.contain('Create Thread');
   });
 
+
   it('contains an UserBox component', function() {
     var wrapper = shallow(<Header forum="1" />);
     expect(wrapper.find(UserBox).length).to.equal(1);
+  });
+
+  it('contains 2 Link components', function() {
+    var wrapper = shallow(<Header forum="1" />);
+    expect(wrapper.find(Link).length).to.equal(2);
   });
 });
