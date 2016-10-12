@@ -10,7 +10,7 @@ module.exports.getThreads = function(forum) {
 module.exports.addThread = function(data, router) {
   return function(dispatch) {
     dispatch({type: 'ADD_THREAD_PENDING'});
-    axios.post('http://localhost:3000/', data)
+    return axios.post('http://localhost:3000/', data)
     .then(function(res) {
       router.push('/f/' + data.fid);
       dispatch({type: 'ADD_THREAD_FULFILLED', payload: res});
