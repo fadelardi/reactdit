@@ -41,14 +41,16 @@ describe('thread actions', function() {
     });
 
   });
-  
+
   describe('addComment', function() {
       var store = mockStore({threads: []});
 
-      it('will get a pending and fulfilled response', function() {
+      it('will get a pending and fulfilled response, then fetch the thread', function() {
         var mockResponse = [
           {type: 'ADD_COMMENT_PENDING'},
-          {type: 'ADD_COMMENT_FULFILLED', payload: {data: []}}
+          {type: 'ADD_COMMENT_FULFILLED', payload: {data: []}},
+          {type: 'FETCH_THREAD_PENDING'}
+
         ];
 
         moxios.wait(function() {
@@ -63,6 +65,8 @@ describe('thread actions', function() {
           expect(store.getActions()[0].type).to.equal(mockResponse[0].type);
           expect(store.getActions()[1].type).to.equal(mockResponse[1].type);
           expect(store.getActions()[1].payload.data).to.eql(mockResponse[1].payload.data);
+          expect(store.getActions()[2].type).to.equal(mockResponse[2].type);
+
         });
       });
     });
