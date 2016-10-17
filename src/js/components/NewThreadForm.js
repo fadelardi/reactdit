@@ -26,7 +26,7 @@ var NewThreadForm = React.createClass({
       );
     } else {
       return (
-        <input type="hidden" name="forum" value={this.props.forum} />
+        <input type="hidden" name="forum" id="forum" value={this.props.forum} />
       );
     }
   },
@@ -48,7 +48,7 @@ var NewThreadForm = React.createClass({
             <label htmlFor="url">Url</label>
             <input className="form-control" name="url" id="url" type="text" />
           </div>
-          <input type="submit" className="btn btn-default" />
+          <input type="submit" id="submit" className="btn btn-default" />
         </form>
       </div>
     );
