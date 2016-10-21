@@ -2,8 +2,30 @@ var React = require('react');
 var connect = require('react-redux').connect;
 var threadActions = require('../actions/threadActions');
 
+var mapStateToProps = function(store) {
+  return {
+    submitted: store.comment.submitted,
+    error: store.comment.error,
+    added: store.comment.added
+  };
+};
 
 var AddComment = React.createClass({
+  getInitialState: function() {
+    return {text: ''};
+  },
+
+  componentWillReceiveProps: function(nextProps) {
+    if (nextProps.added) {
+      this.setState({text: ''});
+    }
+    this.setState(nextProps);
+  },
+
+  handleChange: function(e) {
+    this.setState({text: e.value});
+  },
+
   handleSubmit: function() {
     var data, commentValue = this.refs.comment.value;
     if (commentValue != '') {
@@ -22,11 +44,11 @@ var AddComment = React.createClass({
     return (
       <div className="addComment col-md-12">
         <div>Add your comment:</div>
-        <textarea ref="comment" />
+        <textarea ref="comment" onChange={this.handleChange} value={this.state.text} />
         <div><button onClick={this.handleSubmit}>Submit Post</button></div>
       </div>
     );
   }
 });
 
-module.exports = connect()(AddComment);
+module.exports = connect(mapStateToProps)(AddComment);
