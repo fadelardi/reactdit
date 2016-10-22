@@ -6,7 +6,10 @@ var forumActions = require('../actions/forumActions');
 
 var mapStateToProps = function(store) {
   return {
-    threads: store.forum.threads
+    threads: store.forum.threads,
+    error: store.forum.error,
+    loading: store.forum.loading,
+    loaded: store.forum.loaded
   };
 };
 
@@ -26,7 +29,15 @@ var ForumPage = React.createClass({
     return (
       <div className="container header">
         <Header forum={this.props.params.forum} />
+        {this.props.loading &&
+        <div className="col-md-12 loading">Loading...</div>
+        }
+        {this.props.error &&
+        <div className="col-md-12 error">There was an error loading this forum. Please try again</div>
+        }
+        {this.props.loaded &&
         <ThreadList threads={this.props.threads} />
+        }
       </div>
     );
   }

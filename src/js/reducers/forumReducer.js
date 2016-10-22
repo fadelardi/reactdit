@@ -2,7 +2,7 @@ var initialState = {
   threads: [],
   loading: false,
   loaded: false,
-  error: null
+  error: false
 };
 
 function forumReducer(state, action) {
@@ -20,7 +20,7 @@ function forumReducer(state, action) {
       });
     case 'FETCH_THREADS_REJECTED':
       return Object.assign({}, state, {
-        error: action.payload.data,
+        error: true,
         loading: false
       });
     default:
