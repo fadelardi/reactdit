@@ -6,7 +6,7 @@ describe('thread reducer', function() {
     thread: [],
     loading: false,
     loaded: false,
-    error: null
+    error: false
   };
 
   it('should return initial state', function() {
@@ -33,7 +33,7 @@ describe('thread reducer', function() {
 
   it('should set loading to false, and return error', function() {
     var newState = Object.assign({}, initialState, {
-      error: 'test',
+      error: true,
       loading: false
     });
 

@@ -2,7 +2,7 @@ var initialState = {
   thread: [],
   loading: false,
   loaded: false,
-  error: null
+  error: false
 };
 
 function threadReducer(state, action) {
@@ -20,7 +20,7 @@ function threadReducer(state, action) {
       });
     case 'FETCH_THREAD_REJECTED':
       return Object.assign({}, state, {
-        error: action.payload.data,
+        error: true,
         loading: false
       });
     default:
