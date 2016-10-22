@@ -3,8 +3,13 @@ var Link = require('react-router').Link;
 var AddComment = require('../containers/AddComment');
 
 var Comment = React.createClass({
-  componentWillMount: function() {
+  getInitialState: function() {
+    return {showReply: false};
+  },
+
+  componentWillReceiveProps: function(nextProps) {
     this.setState({showReply: false});
+    this.setState(nextProps);
   },
 
   showReply: function(e) {
