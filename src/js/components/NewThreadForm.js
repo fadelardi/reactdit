@@ -1,10 +1,11 @@
 var React = require('react');
+var ForumSelector = require('./ForumSelector');
 
 var NewThreadForm = React.createClass({
   getInitialState: function() {
     return {error: false};
   },
-  
+
   onSubmit: function(e) {
     var form, values;
 
@@ -41,7 +42,7 @@ var NewThreadForm = React.createClass({
       return (
         <div className="form-group">
           <label htmlFor="forum">Forum (*)</label>
-          <input className="form-control" name="forum" id="forum" type="text" required />
+          <ForumSelector fora={this.props.fora} />
         </div>
       );
     } else {

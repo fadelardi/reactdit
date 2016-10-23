@@ -6,7 +6,8 @@ var mount = enzyme.mount;
 var render = enzyme.render;
 var sinon = require('sinon');
 
-var NewThreadForm = require('../../src/js/components/NewThreadForm.js');
+var NewThreadForm = require('../../src/js/components/NewThreadForm');
+var ForumSelector = require('../../src/js/components/ForumSelector');
 
 describe('NewThreadForm component', function() {
 	var callback = sinon.spy();
@@ -60,7 +61,7 @@ describe('NewThreadForm component', function() {
 	});
 
 	it('should find a hidden forum field', function() {
-		expect(wrapper.find('#forum').prop('type')).to.equal('text');
+		expect(wrapper.find(ForumSelector).length).to.equal(1);
 	});
 
 
