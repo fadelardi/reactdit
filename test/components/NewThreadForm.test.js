@@ -29,6 +29,36 @@ describe('NewThreadForm component', function() {
 		expect(callback.called).to.equal(true);
 	});
 
+	it('should not call submit callback due to missing title', function() {
+		var currentCallCount = callback.calledCount;
+		expect(wrapper.find('#submit').length).to.equal(1);
+
+		e.target.title.value = '';
+		wrapper.find('form').simulate('submit', e);
+		expect(callback.calledCount).to.equal(currentCallCount);
+		e.target.title.value = 'test';
+	});
+
+	it('should not call submit callback due to missing content', function() {
+		var currentCallCount = callback.calledCount;
+		expect(wrapper.find('#submit').length).to.equal(1);
+
+		e.target.content.value = '';
+		wrapper.find('form').simulate('submit', e);
+		expect(callback.calledCount).to.equal(currentCallCount);
+		e.target.content.value = 'test';
+	});
+
+	it('should not call submit callback due to missing content', function() {
+		var currentCallCount = callback.calledCount;
+		expect(wrapper.find('#submit').length).to.equal(1);
+
+		e.target.forum.value = '';
+		wrapper.find('form').simulate('submit', e);
+		expect(callback.calledCount).to.equal(currentCallCount);
+		e.target.forum.value = 'test';
+	});
+
 	it('should find a hidden forum field', function() {
 		expect(wrapper.find('#forum').prop('type')).to.equal('text');
 	});
