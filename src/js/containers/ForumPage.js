@@ -2,7 +2,7 @@ var React = require('react');
 var connect = require('react-redux').connect;
 var Header = require('../components/Header');
 var ThreadList = require('../components/ThreadList');
-var forumActions = require('../actions/threadActions');
+var threadActions = require('../actions/threadActions');
 
 var mapStateToProps = function(store) {
   return {
