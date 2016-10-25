@@ -4,7 +4,8 @@ var rootReducer = combineReducers({
   fora: require('./foraReducer'),
   forum: require('./forumReducer'),
   thread: require('./threadReducer'),
-  comment: require('./commentReducer')
+  comment: require('./commentReducer'),
+  comments: require('./commentsReducer')
 });
 
 module.exports = rootReducer;

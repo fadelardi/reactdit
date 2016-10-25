@@ -7,6 +7,13 @@ module.exports.getThread = function(id) {
   };
 };
 
+module.exports.getComments = function(threadId) {
+  return {
+    type: 'FETCH_COMMENTS',
+    payload: axios.get('http://localhost:3000/t/' + threadId + '/comments')
+  };
+};
+
 module.exports.addComment = function(data) {
   var self = this;
   return function(dispatch) {
