@@ -5,22 +5,22 @@ var CommentList = require('../components/CommentList');
 var ThreadDetail = require('../components/ThreadDetail');
 var AddComment = require('./AddComment');
 var threadActions = require('../actions/threadActions');
-
+var commentActions = require('../actions/commentActions');
 
 var mapStateToProps = function(store) {
   return {
     thread: store.thread.thread,
     comments: store.comments.comments,
-    loaded: store.thread.loaded,
-    loading: store.thread.loading,
-    error: store.thread.error
+    loaded: store.comments.loaded,
+    loading: store.comments.loading,
+    error: store.comments.error
   };
 };
 
 var ThreadPage = React.createClass({
   componentWillMount: function() {
       this.props.dispatch(threadActions.getThread(this.props.params.id));
-      this.props.dispatch(threadActions.getComments(this.props.params.id));
+      this.props.dispatch(commentActions.getComments(this.props.params.id));
   },
 
   render: function() {

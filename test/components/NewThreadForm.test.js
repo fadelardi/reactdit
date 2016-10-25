@@ -2,14 +2,12 @@ var React = require('react');
 var enzyme = require('enzyme');
 var expect = require('chai').expect;
 var shallow = enzyme.shallow;
-var mount = enzyme.mount;
-var render = enzyme.render;
 var sinon = require('sinon');
 
 var NewThreadForm = require('../../src/js/components/NewThreadForm');
 var ForumSelector = require('../../src/js/components/ForumSelector');
 
-describe('NewThreadForm component', function() {
+describe('<NewThreadForm />', function() {
 	var callback = sinon.spy();
 	var wrapper = shallow(<NewThreadForm handleSubmit={callback} />);
 	var e = {

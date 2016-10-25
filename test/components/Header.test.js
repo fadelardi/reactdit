@@ -2,15 +2,13 @@ var React = require('react');
 var enzyme = require('enzyme');
 var expect = require('chai').expect;
 var shallow = enzyme.shallow;
-var mount = enzyme.mount;
 var render = enzyme.render;
 
 var Header = require('../../src/js/components/Header.js');
 var UserBox = require('../../src/js/components/UserBox');
 var Link = require('react-router').Link;
 
-
-describe('Header component', function() {
+describe('<Header />', function() {
   var wrapper = render(<Header forum="1" />);
 
   it('contains an index link', function() {

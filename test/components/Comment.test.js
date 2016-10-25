@@ -2,12 +2,10 @@ var React = require('react');
 var enzyme = require('enzyme');
 var expect = require('chai').expect;
 var shallow = enzyme.shallow;
-var mount = enzyme.mount;
-var render = enzyme.render;
 
 var Comment = require('../../src/js/components/Comment');
 
-describe('Comment component', function() {
+describe('<Comment />', function() {
   var replies = [
     {id: 1},
     {id: 2},

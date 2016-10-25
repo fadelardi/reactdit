@@ -1,6 +1,6 @@
 var React = require('react');
 var connect = require('react-redux').connect;
-var threadActions = require('../actions/threadActions');
+var commentActions = require('../actions/commentActions');
 
 var mapStateToProps = function(store) {
   return {
@@ -36,7 +36,7 @@ var AddComment = React.createClass({
         comment: this.refs.comment.value
       };
 
-      this.props.dispatch(threadActions.addComment(data));
+      this.props.dispatch(commentActions.addComment(data));
     }
   },
 

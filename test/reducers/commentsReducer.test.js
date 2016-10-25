@@ -1,7 +1,7 @@
 var commentsReducer = require('../../src/js/reducers/commentsReducer');
 var expect = require('chai').expect;
 
-describe('commentsReducer', function() {
+describe('comments reducer', function() {
   var initialState = {
     comments: [],
     loading: false,

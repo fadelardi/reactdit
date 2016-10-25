@@ -1,7 +1,7 @@
 var combineReducers = require('redux').combineReducers;
 
 var rootReducer = combineReducers({
-  fora: require('./foraReducer'),
+  forums: require('./foraReducer'),
   forum: require('./forumReducer'),
   thread: require('./threadReducer'),
   comment: require('./commentReducer'),

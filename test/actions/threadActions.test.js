@@ -39,35 +39,55 @@ describe('thread actions', function() {
         expect(store.getActions()[1].payload.data).to.eql(mockResponse[1].payload.data);
       });
     });
-
   });
 
-  describe('addComment', function() {
+
+  describe('getThreads', function() {
+    it('will get no threads', function() {
       var store = mockStore({threads: []});
+      var mockResponse = [
+          {type: 'FETCH_THREADS_PENDING'},
+          {type: 'FETCH_THREADS_FULFILLED', payload: { data: [] }}
+      ];
 
-      it('will get a pending and fulfilled response, then fetch the thread', function() {
-        var mockResponse = [
-          {type: 'ADD_COMMENT_PENDING'},
-          {type: 'ADD_COMMENT_FULFILLED', payload: {data: []}},
-          {type: 'FETCH_THREAD_PENDING'}
-
-        ];
-
-        moxios.wait(function() {
-          var request = moxios.requests.mostRecent();
-          request.respondWith({
-            status: 200,
-            response: []
-          });
-        });
-
-        return store.dispatch(threadActions.addComment({id: 1})).then(function() {
-          expect(store.getActions()[0].type).to.equal(mockResponse[0].type);
-          expect(store.getActions()[1].type).to.equal(mockResponse[1].type);
-          expect(store.getActions()[1].payload.data).to.eql(mockResponse[1].payload.data);
-          expect(store.getActions()[2].type).to.equal(mockResponse[2].type);
-
+      moxios.wait(function() {
+        var request = moxios.requests.mostRecent();
+        request.respondWith({
+          status: 200,
+          response: []
         });
       });
+
+      return store.dispatch(threadActions.getThreads()).then(function() {
+        expect(store.getActions()[0].type).to.equal(mockResponse[0].type);
+        expect(store.getActions()[1].type).to.equal(mockResponse[1].type);
+        expect(store.getActions()[1].payload.data).to.eql(mockResponse[1].payload.data);
+      });
     });
+  });
+
+  describe('addThread', function() {
+    it('will return a successful response type', function() {
+      var store = mockStore({threads: []});
+      var mockResponse = [
+          {type: 'ADD_THREAD_PENDING'},
+          {type: 'ADD_THREAD_FULFILLED', payload: { data: [] }}
+      ];
+
+      moxios.wait(function() {
+        var request = moxios.requests.mostRecent();
+        request.respondWith({
+          status: 200,
+          response: []
+        });
+      });
+
+      return store.dispatch(threadActions.addThread([], [])).then(function() {
+        expect(store.getActions()[0].type).to.equal(mockResponse[0].type);
+        expect(store.getActions()[1].type).to.equal(mockResponse[1].type);
+        expect(store.getActions()[1].payload.data).to.eql(mockResponse[1].payload.data);
+      });
+
+    });
+  });
 });

@@ -2,13 +2,11 @@ var React = require('react');
 var enzyme = require('enzyme');
 var expect = require('chai').expect;
 var shallow = enzyme.shallow;
-var mount = enzyme.mount;
-var render = enzyme.render;
 
 var ThreadList = require('../../src/js/components/ThreadList');
 var Thread = require('../../src/js/components/Thread');
 
-describe('ThreadList component', function() {
+describe('<ThreadList />', function() {
   var threads = [{}, {}];
   var wrapper = shallow(<ThreadList threads={threads} />);
 

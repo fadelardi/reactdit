@@ -1,15 +1,12 @@
 var React = require('react');
 var enzyme = require('enzyme');
 var expect = require('chai').expect;
-var shallow = enzyme.shallow;
-var mount = enzyme.mount;
 var render = enzyme.render;
 
 var Thread = require('../../src/js/components/Thread.js');
 var Link = require('react-router').Link;
 
-
-describe('Thread component', function() {
+describe('<Thread />', function() {
   var wrapper = render(<Thread totalComments="5" title="topkek" timestring="date" author="test" forum="testforum" />);
 
   it('contains text "5 comment(s)"', function() {

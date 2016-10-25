@@ -3,12 +3,12 @@ var connect = require('react-redux').connect;
 var Header = require('../components/Header');
 var NewThreadForm = require('../components/NewThreadForm');
 var forumActions = require('../actions/forumActions');
-var foraActions = require('../actions/foraActions');
+var threadActions = require('../actions/threadActions');
 var withRouter = require('react-router').withRouter;
 
 var mapStateToProps = function(store) {
   return {
-    fora: store.fora.fora
+    forumList: store.forums.forums
   };
 };
 
@@ -17,20 +17,20 @@ var NewThreadPage = withRouter(React.createClass({
 
   componentDidMount: function() {
     if (typeof this.props.params.forum == 'undefined') {
-      this.props.dispatch(foraActions.getFora());
+      this.props.dispatch(forumActions.getForums());
     }
   },
 
   handleSubmit: function(form) {
       form.uid = 1;
-      this.props.dispatch(forumActions.addThread(form, this.props.router));
+      this.props.dispatch(threadActions.addThread(form, this.props.router));
   },
 
   render: function() {
     return (
       <div className="container header">
         <Header />
-        <NewThreadForm handleSubmit={this.handleSubmit} forum={this.props.params.forum} fora={this.props.fora} />
+        <NewThreadForm handleSubmit={this.handleSubmit} forum={this.props.params.forum} forums={this.props.forumList} />
       </div>
     );
   }

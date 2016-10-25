@@ -7,24 +7,23 @@ module.exports.getThread = function(id) {
   };
 };
 
-module.exports.getComments = function(threadId) {
+module.exports.getThreads = function(forum) {
   return {
-    type: 'FETCH_COMMENTS',
-    payload: axios.get('http://localhost:3000/t/' + threadId + '/comments')
+    type: 'FETCH_THREADS',
+    payload: axios.get('http://localhost:3000' + (typeof forum != 'undefined' ? '/f/' + encodeURIComponent(forum) : ''))
   };
 };
 
-module.exports.addComment = function(data) {
-  var self = this;
+module.exports.addThread = function(data, router) {
   return function(dispatch) {
-    dispatch({type: 'ADD_COMMENT_PENDING'});
-    return axios.post('http://localhost:3000/t/' + data.id, data)
+    dispatch({type: 'ADD_THREAD_PENDING'});
+    return axios.post('http://localhost:3000/', data)
     .then(function(res) {
-      dispatch({type: 'ADD_COMMENT_FULFILLED', payload: res});
-      dispatch(self.getThread(data.id));
+      router.push('/f/' + data.fid);
+      dispatch({type: 'ADD_THREAD_FULFILLED', payload: res});
     })
     .catch(function(err) {
-      dispatch({type: 'ADD_COMMENT_REJECTED', payload: err});
+      dispatch({type: 'ADD_THREAD_REJECTED', payload: err});
     });
   };
 };

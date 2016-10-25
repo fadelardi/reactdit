@@ -2,7 +2,7 @@ var React = require('react');
 var connect = require('react-redux').connect;
 var Header = require('../components/Header');
 var ThreadList = require('../components/ThreadList');
-var forumActions = require('../actions/forumActions');
+var forumActions = require('../actions/threadActions');
 
 var mapStateToProps = function(store) {
   return {
@@ -15,12 +15,12 @@ var mapStateToProps = function(store) {
 
 var ForumPage = React.createClass({
   componentWillMount: function() {
-      this.props.dispatch(forumActions.getThreads());
+      this.props.dispatch(threadActions.getThreads());
   },
 
   componentWillReceiveProps: function(nextProps) {
       if (this.props.params.forum != nextProps.params.forum) {
-        nextProps.dispatch(forumActions.getThreads(nextProps.params.forum));
+        nextProps.dispatch(threadActions.getThreads(nextProps.params.forum));
       }
       this.setState(nextProps);
   },
