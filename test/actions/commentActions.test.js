@@ -16,7 +16,6 @@ describe('comment actions', function() {
     moxios.uninstall();
   });
 
-
   describe('addComment', function() {
     var store = mockStore({threads: []});
     it('will get a pending and fulfilled response, then fetch the thread', function() {
@@ -43,7 +42,7 @@ describe('comment actions', function() {
     });
   });
 
-  describe('getComments', function() {
+  describe('getCommentList', function() {
     var store = mockStore({threads: []});
 
     it('will get a pending and fulfilled response', function() {
@@ -60,7 +59,7 @@ describe('comment actions', function() {
         });
       });
 
-      return store.dispatch(commentActions.getComments(1)).then(function() {
+      return store.dispatch(commentActions.getCommentList(1)).then(function() {
         expect(store.getActions()[0].type).to.equal(mockResponse[0].type);
         expect(store.getActions()[1].type).to.equal(mockResponse[1].type);
         expect(store.getActions()[1].payload.data).to.eql(mockResponse[1].payload.data);

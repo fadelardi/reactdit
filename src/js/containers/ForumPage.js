@@ -6,21 +6,21 @@ var threadActions = require('../actions/threadActions');
 
 var mapStateToProps = function(store) {
   return {
-    threads: store.forum.threads,
-    error: store.forum.error,
-    loading: store.forum.loading,
-    loaded: store.forum.loaded
+    threads: store.threadList.threads,
+    error: store.threadList.error,
+    loading: store.threadList.loading,
+    loaded: store.threadList.loaded
   };
 };
 
 var ForumPage = React.createClass({
   componentWillMount: function() {
-      this.props.dispatch(threadActions.getThreads());
+      this.props.dispatch(threadActions.getThreadList());
   },
 
   componentWillReceiveProps: function(nextProps) {
       if (this.props.params.forum != nextProps.params.forum) {
-        nextProps.dispatch(threadActions.getThreads(nextProps.params.forum));
+        nextProps.dispatch(threadActions.getThreadList(nextProps.params.forum));
       }
       this.setState(nextProps);
   },

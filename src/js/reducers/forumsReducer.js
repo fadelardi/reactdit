@@ -1,24 +1,24 @@
-var initialState = {
-  fora: [],
-  loading: false,
-  loaded: false,
-  error: false
-};
+module.exports.forumListReducer = function(state, action) {
+  var initialState = {
+    forums: [],
+    loading: false,
+    loaded: false,
+    error: false
+  };
 
-function foraReducer(state, action) {
   state = state || initialState;
   switch(action.type) {
-    case 'FETCH_FORA_PENDING':
+    case 'FETCH_FORUMS_PENDING':
       return Object.assign({}, state, {
         loading: true
       });
-    case 'FETCH_FORA_FULFILLED':
+    case 'FETCH_FORUMS_FULFILLED':
       return Object.assign({}, state, {
         loading: false,
         loaded: true,
         fora: action.payload.data
       });
-    case 'FETCH_FORA_REJECTED':
+    case 'FETCH_FORUMS_REJECTED':
       return Object.assign({}, state, {
         error: true,
         loading: false
@@ -26,6 +26,4 @@ function foraReducer(state, action) {
     default:
       return state;
   }
-}
-
-module.exports = foraReducer;
+};

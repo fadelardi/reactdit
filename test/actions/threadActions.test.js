@@ -42,7 +42,7 @@ describe('thread actions', function() {
   });
 
 
-  describe('getThreads', function() {
+  describe('getThreadList', function() {
     it('will get no threads', function() {
       var store = mockStore({threads: []});
       var mockResponse = [
@@ -58,7 +58,7 @@ describe('thread actions', function() {
         });
       });
 
-      return store.dispatch(threadActions.getThreads()).then(function() {
+      return store.dispatch(threadActions.getThreadList()).then(function() {
         expect(store.getActions()[0].type).to.equal(mockResponse[0].type);
         expect(store.getActions()[1].type).to.equal(mockResponse[1].type);
         expect(store.getActions()[1].payload.data).to.eql(mockResponse[1].payload.data);

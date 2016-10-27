@@ -4,9 +4,9 @@ var commentActions = require('../actions/commentActions');
 
 var mapStateToProps = function(store) {
   return {
-    submitted: store.comment.submitted,
-    error: store.comment.error,
-    added: store.comment.added
+    submitted: store.newComment.submitted,
+    error: store.newComment.error,
+    added: store.newComment.added
   };
 };
 

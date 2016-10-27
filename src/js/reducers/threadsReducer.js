@@ -1,6 +1,6 @@
-module.exports.commentListReducer = function(state, action) {
+module.exports.threadReducer = function(state, action) {
   var initialState = {
-    comments: [],
+    thread: [],
     loading: false,
     loaded: false,
     error: false
@@ -8,17 +8,17 @@ module.exports.commentListReducer = function(state, action) {
 
   state = state || initialState;
   switch(action.type) {
-    case 'FETCH_COMMENTS_PENDING':
+    case 'FETCH_THREAD_PENDING':
       return Object.assign({}, state, {
         loading: true
       });
-    case 'FETCH_COMMENTS_FULFILLED':
+    case 'FETCH_THREAD_FULFILLED':
       return Object.assign({}, state, {
-        comments: action.payload.data,
+        thread: action.payload.data,
         loading: false,
         loaded: true
       });
-    case 'FETCH_COMMENTS_REJECTED':
+    case 'FETCH_THREAD_REJECTED':
       return Object.assign({}, state, {
         error: true,
         loading: false
@@ -28,29 +28,30 @@ module.exports.commentListReducer = function(state, action) {
   }
 };
 
-module.exports.newCommentReducer = function(state, action) {
+module.exports.threadListReducer = function(state, action) {
   var initialState = {
-    submitted: false,
-    added: false,
+    threads: [],
+    loading: false,
+    loaded: false,
     error: false
   };
 
   state = state || initialState;
-
   switch(action.type) {
-    case 'ADD_COMMENT_PENDING':
+    case 'FETCH_THREADS_PENDING':
       return Object.assign({}, state, {
-        submitted: true,
+        loading: true
       });
-    case 'ADD_COMMENT_FULFILLED':
+    case 'FETCH_THREADS_FULFILLED':
       return Object.assign({}, state, {
-        submitted: false,
-        added: true,
+        threads: action.payload.data,
+        loading: false,
+        loaded: true
       });
-    case 'ADD_COMMENT_REJECTED':
+    case 'FETCH_THREADS_REJECTED':
       return Object.assign({}, state, {
-        submitted: false,
-        error: true
+        error: true,
+        loading: false
       });
     default:
       return state;

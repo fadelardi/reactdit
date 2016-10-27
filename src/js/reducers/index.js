@@ -1,11 +1,11 @@
 var combineReducers = require('redux').combineReducers;
 
 var rootReducer = combineReducers({
-  forums: require('./foraReducer'),
-  forum: require('./forumReducer'),
-  thread: require('./threadReducer'),
-  comment: require('./commentReducer'),
-  comments: require('./commentsReducer')
+  forumList: require('./forumsReducer').forumListReducer,
+  threadList: require('./threadsReducer').threadListReducer,
+  thread: require('./threadsReducer').threadReducer,
+  commentList: require('./commentsReducer').commentListReducer,
+  newComment: require('./commentsReducer').newCommentReducer,
 });
 
 module.exports = rootReducer;

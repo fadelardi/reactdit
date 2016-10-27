@@ -8,7 +8,7 @@ var withRouter = require('react-router').withRouter;
 
 var mapStateToProps = function(store) {
   return {
-    forumList: store.forums.forums
+    forumList: store.forumList.forums
   };
 };
 

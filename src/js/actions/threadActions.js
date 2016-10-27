@@ -7,7 +7,7 @@ module.exports.getThread = function(id) {
   };
 };
 
-module.exports.getThreads = function(forum) {
+module.exports.getThreadList = function(forum) {
   return {
     type: 'FETCH_THREADS',
     payload: axios.get('http://localhost:3000' + (typeof forum != 'undefined' ? '/f/' + encodeURIComponent(forum) : ''))

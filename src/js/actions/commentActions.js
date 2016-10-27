@@ -1,7 +1,7 @@
 var axios = require('axios');
 var threadActions = require('./threadActions');
 
-module.exports.getComments = function(threadId) {
+module.exports.getCommentList = function(threadId) {
   return {
     type: 'FETCH_COMMENTS',
     payload: axios.get('http://localhost:3000/t/' + threadId + '/comments')
