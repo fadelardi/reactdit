@@ -16,7 +16,7 @@ module.exports.forumListReducer = function(state, action) {
       return Object.assign({}, state, {
         loading: false,
         loaded: true,
-        fora: action.payload.data
+        forums: action.payload.data
       });
     case 'FETCH_FORUMS_REJECTED':
       return Object.assign({}, state, {

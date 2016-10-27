@@ -42,7 +42,7 @@ var NewThreadForm = React.createClass({
       return (
         <div className="form-group">
           <label htmlFor="forum">Forum (*)</label>
-          <ForumSelector fora={this.props.fora} />
+          <ForumSelector forums={this.props.forums} />
         </div>
       );
     } else {

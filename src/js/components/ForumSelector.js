@@ -2,8 +2,8 @@ var React = require('react');
 
 var ForumSelector = React.createClass({
   render: function(){
-    var fora = this.props.fora;
-    var forumList = fora.map(function(forum) {
+    var forums = this.props.forums;
+    var forumList = forums.map(function(forum) {
       return(
         <option key={forum.id} value={forum.id}>{forum.name}</option>
       );
