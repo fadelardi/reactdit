@@ -3,6 +3,7 @@ var connect = require('react-redux').connect;
 var Header = require('../components/Header');
 var ThreadList = require('../components/ThreadList');
 var threadActions = require('../actions/threadActions');
+var withRouter = require('react-router').withRouter;
 
 var mapStateToProps = function(store) {
   return {
@@ -13,7 +14,9 @@ var mapStateToProps = function(store) {
   };
 };
 
-var ForumPage = React.createClass({
+var ForumPage = withRouter(React.createClass({
+  displayName: 'ForumPage',
+
   componentWillMount: function() {
       this.props.dispatch(threadActions.getThreadList());
   },
@@ -41,7 +44,7 @@ var ForumPage = React.createClass({
       </div>
     );
   }
-});
+}));
 
 
 
