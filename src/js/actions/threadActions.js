@@ -1,23 +1,24 @@
+var config = require('../config.js');
 var axios = require('axios');
 
 module.exports.getThread = function(id) {
   return {
     type: 'FETCH_THREAD',
-    payload: axios.get('http://localhost:3000/t/' + id)
+    payload: axios.get(config.API_URL + '/t/' + id)
   };
 };
 
 module.exports.getThreadList = function(forum) {
   return {
     type: 'FETCH_THREADS',
-    payload: axios.get('http://localhost:3000' + (typeof forum != 'undefined' ? '/f/' + encodeURIComponent(forum) : ''))
+    payload: axios.get(config.API_URL + (typeof forum != 'undefined' ? '/f/' + encodeURIComponent(forum) : ''))
   };
 };
 
 module.exports.addThread = function(data, router) {
   return function(dispatch) {
     dispatch({type: 'ADD_THREAD_PENDING'});
-    return axios.post('http://localhost:3000/', data)
+    return axios.post(config.API_URL, data)
     .then(function(res) {
       router.push('/f/' + data.fid);
       dispatch({type: 'ADD_THREAD_FULFILLED', payload: res});

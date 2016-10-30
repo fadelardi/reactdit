@@ -1,8 +1,9 @@
+var config = require('../config.js');
 var axios = require('axios');
 
 module.exports.getForums = function() {
   return {
     type: 'FETCH_FORUMS',
-    payload: axios.get('http://localhost:3000/forums')
+    payload: axios.get(config.API_URL + '/forums')
   };
 };
