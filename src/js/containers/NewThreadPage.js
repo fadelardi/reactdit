@@ -1,3 +1,4 @@
+var ANON_ID = require('../config').ANON_ID;
 var React = require('react');
 var connect = require('react-redux').connect;
 var Header = require('../components/Header');
@@ -22,7 +23,7 @@ var NewThreadPage = withRouter(React.createClass({
   },
 
   handleSubmit: function(form) {
-      form.uid = 1;
+      form.uid = ANON_ID;
       this.props.dispatch(threadActions.addThread(form, this.props.router));
   },
 
