@@ -12,7 +12,7 @@ describe('<Header />', function() {
   var wrapper = render(<Header forum="1" />);
 
   it('contains an index link', function() {
-    expect(wrapper.text()).to.contain('Index');
+    expect(wrapper.text()).to.contain('REACTDIT');
   });
 
   it('contains a create thread link', function() {

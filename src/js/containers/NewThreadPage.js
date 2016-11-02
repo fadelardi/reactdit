@@ -29,7 +29,7 @@ var NewThreadPage = withRouter(React.createClass({
 
   render: function() {
     return (
-      <div className="container header">
+      <div>
         <Header />
         <NewThreadForm handleSubmit={this.handleSubmit} forum={this.props.params.forum} forums={this.props.forumList} />
       </div>

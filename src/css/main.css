@@ -51,6 +51,12 @@ li.comment .options {
   background-color: #666666;
 }
 
+.newThreadForm {
+  border: 2px solid #337ab7;
+  border-radius: 10px;
+  background-color: #CCCCCC;
+}
+
 .loading, .error {
   padding: 40px;
   text-align: center;

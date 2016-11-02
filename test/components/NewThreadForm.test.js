@@ -68,10 +68,9 @@ describe('<NewThreadForm />', function() {
 		expect(wrapper2.find('#forum').prop('type')).to.equal('hidden');
 	});
 
-	it('should find the appropiate fields: title, content and url', function() {
+	it('should find the appropiate fields: title, content', function() {
 		expect(wrapper.find('#title').length).to.equal(1);
 		expect(wrapper.find('#content').length).to.equal(1);
-		expect(wrapper.find('#url').length).to.equal(1);
 	});
 
 

@@ -48,9 +48,11 @@ var NewThreadForm = React.createClass({
   forumField: function (forum) {
     if (typeof forum == 'undefined') {
       return (
-        <div className="form-group">
-          <label htmlFor="forum">Forum (*)</label>
-          <ForumSelector forums={this.props.forums} />
+        <div className="form-group row">
+          <label htmlFor="forum" className="col-sm-2">Forum (*)</label>
+          <div className="col-sm-10">
+            <ForumSelector forums={this.props.forums} />
+          </div>
         </div>
       );
     } else {
@@ -71,32 +73,38 @@ var NewThreadForm = React.createClass({
     });
 
     return (
-      <div>
+      <div className="container-fluid col-md-10 col-md-offset-1 newThreadForm">
         <form onSubmit={this.onSubmit}>
           {this.state.error &&
             <div>The form contains some errors. Make sure all fields with a (*) are filled.</div>
           }
-          <div className="form-group">
-            <label htmlFor="options">Type (*):</label>
-            <div id="options">
+          <div className="form-group row">
+            <label className="col-sm-2" htmlFor="options">Type (*):</label>
+            <div className="col-sm-10" id="options">
               {threadTypesOptions}
             </div>
           </div>
-          <div className="form-group">
-            <label htmlFor="title">Title (*)</label>
-            <input className="form-control" name="title" id="title" type="text" required />
+          <div className="form-group row">
+            <label className="col-sm-2" htmlFor="title">Title (*)</label>
+            <div className="col-sm-10">
+              <input className="form-control" name="title" id="title" type="text" required />
+            </div>
           </div>
           {this.forumField(this.props.forum)}
-          <div className="form-group">
-            <label htmlFor="content">Content (*)</label>
+          <div className="form-group row">
+            <label htmlFor="content" className="col-sm-2">Content (*)</label>
             {this.state.type == 'TXT' &&
-              <textarea className="form-control" name="content" id="content" required />
+              <div className="col-sm-10"><textarea className="form-control" name="content" id="content" required /></div>
             }
             {this.state.type != 'TXT' &&
-              <input type="text" className="form-control" name="content" id="content" />
+              <div className="col-sm-10"><input type="text" className="form-control col-sm-10" name="content" id="content" /></div>
             }
           </div>
-          <input type="submit" id="submit" className="btn btn-default" />
+          <div className="form-group row">
+            <div className="col-sm-offset-2 col-sm-10">
+              <input type="submit" id="submit" className="btn btn-primary" />
+            </div>
+          </div>
         </form>
       </div>
     );
