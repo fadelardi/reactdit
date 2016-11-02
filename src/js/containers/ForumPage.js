@@ -30,7 +30,7 @@ var ForumPage = withRouter(React.createClass({
 
   render: function() {
     return (
-      <div className="container header">
+      <div>
         <Header forum={this.props.params.forum} />
         {this.props.loading &&
         <div className="col-md-12 loading">Loading...</div>
