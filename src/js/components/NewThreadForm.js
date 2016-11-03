@@ -75,8 +75,9 @@ var NewThreadForm = React.createClass({
     return (
       <div className="container-fluid col-md-10 col-md-offset-1 newThreadForm">
         <form onSubmit={this.onSubmit}>
+          <h3>New Thread</h3>
           {this.state.error &&
-            <div>The form contains some errors. Make sure all fields with a (*) are filled.</div>
+            <div className="bg-danger">The form contains some errors. Make sure all fields with a <strong>(*)</strong> are filled.</div>
           }
           <div className="form-group row">
             <label className="col-sm-2" htmlFor="options">Type (*):</label>
