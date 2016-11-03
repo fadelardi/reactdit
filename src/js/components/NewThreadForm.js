@@ -1,4 +1,5 @@
-var threadTypes = require('../config').THREAD_TYPES;
+var THREAD_TYPES = require('../config').THREAD_TYPES;
+var THREAD_TYPE_TEXT = require('../config').THREAD_TYPE_TEXT;
 var React = require('react');
 var ForumSelector = require('./ForumSelector');
 
@@ -62,16 +63,18 @@ var NewThreadForm = React.createClass({
     }
   },
 
-  render: function() {
+  threadTypeOptions: function() {
     var self = this;
-    var threadTypesOptions = threadTypes.map(function(type) {
+    return THREAD_TYPES.map(function(type) {
       return(
-        <label key={type.id} className="radio-inline">
-          <input key={type.id} name="type" id="type" type="radio" value={type.id} onChange={self.handleTypeChange} defaultChecked={type.id == 'TXT'}  /> {type.desc}
+        <label key={type} className="radio-inline">
+          <input key={type} name="type" id="type" type="radio" value={type} onChange={self.handleTypeChange} defaultChecked={type == THREAD_TYPE_TEXT}  /> {type}
         </label>
       );
     });
+  },
 
+  render: function() {
     return (
       <div className="container-fluid col-md-10 col-md-offset-1 newThreadForm">
         <form onSubmit={this.onSubmit}>
@@ -82,7 +85,7 @@ var NewThreadForm = React.createClass({
           <div className="form-group row">
             <label className="col-sm-2" htmlFor="options">Type (*):</label>
             <div className="col-sm-10" id="options">
-              {threadTypesOptions}
+              {this.threadTypeOptions()}
             </div>
           </div>
           <div className="form-group row">

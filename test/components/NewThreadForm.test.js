@@ -3,6 +3,7 @@ var enzyme = require('enzyme');
 var expect = require('chai').expect;
 var shallow = enzyme.shallow;
 var sinon = require('sinon');
+var THREAD_TYPES = require('../../src/js/config').THREAD_TYPES;
 
 var NewThreadForm = require('../../src/js/components/NewThreadForm');
 var ForumSelector = require('../../src/js/components/ForumSelector');
@@ -81,7 +82,7 @@ describe('<NewThreadForm />', function() {
 	it('should find the appropiate fields: title, content, 3 types', function() {
 		expect(wrapper.find('#title').length).to.equal(1);
 		expect(wrapper.find('#content').length).to.equal(1);
-		expect(wrapper.find('#type').length).to.equal(3);
+		expect(wrapper.find('#type').length).to.equal(THREAD_TYPES.length);
 	});
 
 
