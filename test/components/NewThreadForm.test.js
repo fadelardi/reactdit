@@ -17,10 +17,10 @@ describe('<NewThreadForm />', function() {
 		target: {
 			title: { value: 'test'},
 			forum: { value: 1 },
-			content: { value: 'test'},
-			url: {value: 'test'}
+			type: { value: 'TXT' },
+			content: { value: 'test'}
 		}
-	}
+	};
 
 	it('should find submit, click and fire callback', function() {
 		expect(wrapper.find('#submit').length).to.equal(1);
@@ -48,6 +48,16 @@ describe('<NewThreadForm />', function() {
 		e.target.content.value = 'test';
 	});
 
+	it('should not call submit callback due to missing type', function() {
+		var currentCallCount = callback.calledCount;
+		expect(wrapper.find('#submit').length).to.equal(1);
+
+		e.target.type.value = '';
+		wrapper.find('form').simulate('submit', e);
+		expect(callback.calledCount).to.equal(currentCallCount);
+		e.target.type.value = 'test';
+	});
+
 	it('should not call submit callback due to missing content', function() {
 		var currentCallCount = callback.calledCount;
 		expect(wrapper.find('#submit').length).to.equal(1);
@@ -68,9 +78,10 @@ describe('<NewThreadForm />', function() {
 		expect(wrapper2.find('#forum').prop('type')).to.equal('hidden');
 	});
 
-	it('should find the appropiate fields: title, content', function() {
+	it('should find the appropiate fields: title, content, 3 types', function() {
 		expect(wrapper.find('#title').length).to.equal(1);
 		expect(wrapper.find('#content').length).to.equal(1);
+		expect(wrapper.find('#type').length).to.equal(3);
 	});
 
 

@@ -67,7 +67,7 @@ var NewThreadForm = React.createClass({
     var threadTypesOptions = threadTypes.map(function(type) {
       return(
         <label key={type.id} className="radio-inline">
-          <input key={type.id} name="type" type="radio" value={type.id} onChange={self.handleTypeChange} defaultChecked={type.id == 'TXT'}  /> {type.desc}
+          <input key={type.id} name="type" id="type" type="radio" value={type.id} onChange={self.handleTypeChange} defaultChecked={type.id == 'TXT'}  /> {type.desc}
         </label>
       );
     });
