@@ -9,7 +9,7 @@ var Provider = require('react-redux').Provider;
 var Store = require('./store');
 
 //Containers
-var ForumPage = require('./containers/ForumPage');
+var ForumPage = require('./containers/ForumPage').default;
 var ThreadPage = require('./containers/ThreadPage');
 var UserPage = require('./containers/UserPage');
 var NewThreadPage = require('./containers/NewThreadPage');

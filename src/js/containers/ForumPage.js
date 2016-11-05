@@ -14,7 +14,7 @@ var mapStateToProps = function(store) {
   };
 };
 
-var ForumPage = withRouter(React.createClass({
+module.exports.ForumPage = React.createClass({
   displayName: 'ForumPage',
 
   componentWillMount: function() {
@@ -44,8 +44,6 @@ var ForumPage = withRouter(React.createClass({
       </div>
     );
   }
-}));
+});
 
-
-
-module.exports = connect(mapStateToProps)(ForumPage);
+module.exports.default = connect(mapStateToProps)(withRouter(this.ForumPage));
