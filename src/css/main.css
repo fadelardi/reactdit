@@ -1,11 +1,11 @@
 body {
-  color: #888888;
+  color: #7885bb;
+  background-color: #c4c6ce;
 }
 
 .header {
   background-color: #cccccc;
-  padding: 5px;
-  border-bottom: 2px solid #337ab7;
+  border-bottom: 1px solid #337ab7;
   font-size: 15px;
   margin-bottom: 15px;
 }
@@ -15,15 +15,40 @@ body {
 }
 
 em.appIcon {
+  padding: 5px;
   background: url('./img/icon.png');
 }
 
-.threadList, .commentList {
-    background-color: #444444;
+.threadList {
+  border: 1px solid #337ab7;
+  background-color: #CCCCCC;
+  border-radius: 10px;
+  padding: 0;
 }
 
 .threadList ul {
+  padding-left: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   list-style-type: none;
+}
+
+.threadList li:first-child {
+  border-top: 1px solid #337ab7;
+}
+
+.threadList li:nth-child(odd) {
+  background-color: #DDDDDD;
+}
+
+.threadList li {
+  padding: 5px;
+  border-bottom: 1px solid #337ab7;
+}
+
+.threadList .title a {
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .commentList ul {
@@ -48,12 +73,8 @@ li.comment .options {
   margin-bottom: 5px;
 }
 
-.threadList ul li:nth-child(odd) {
-  background-color: #666666;
-}
-
 .newThreadForm {
-  border: 2px solid #337ab7;
+  border: 1px solid #337ab7;
   border-radius: 10px;
   background-color: #CCCCCC;
 }

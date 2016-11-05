@@ -12,7 +12,7 @@ var ThreadList = React.createClass({
     });
 
     return (
-      <div className="col-md-12 threadList">
+      <div className="container-fluid col-md-10 col-md-offset-1 threadList">
         <ul>
           {list}
         </ul>
