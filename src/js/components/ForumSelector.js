@@ -11,7 +11,7 @@ var ForumSelector = React.createClass({
 
     return (
       <select className="form-control" name="forum" id="forum" required>
-        <option>Select a forum</option>
+        <option value="">Select a forum</option>
         {forumList}
       </select>
     );
