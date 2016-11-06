@@ -6,7 +6,7 @@ var CommentList = React.createClass({
     var comments = this.props.comments;
     var commentLis = comments.map(function(comment) {
       return (
-        <Comment key={comment.id} id={comment.id} threadId={comment.pk_threads_id} author={comment.author} timestring={comment.date} replies={comment.replies}>
+        <Comment key={comment.id} id={comment.id} threadId={comment.pk_threads_id} author={comment.author} timestring={comment.created} replies={comment.replies}>
           {comment.body}
         </Comment>
       );

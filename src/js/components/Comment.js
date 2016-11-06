@@ -1,6 +1,8 @@
 var React = require('react');
 var Link = require('react-router').Link;
 var AddComment = require('../containers/AddComment');
+var moment = require('moment');
+
 
 var Comment = React.createClass({
   getInitialState: function() {
@@ -17,6 +19,11 @@ var Comment = React.createClass({
     this.setState({showReply: true});
   },
 
+  formatDate: function(date) {
+    var dateString = moment().from(date, true);
+    return (dateString != 'Invalid date') ? dateString + ' ago' : 'unknown time ago';
+  },
+
   render: function() {
     var styles = {
       display: (this.state.showReply) ? 'block' : 'none'
@@ -26,7 +33,7 @@ var Comment = React.createClass({
     if (this.props.replies.length > 0 ) {
         replies = this.props.replies.map(function(reply) {
           return (
-            <Comment key={reply.id} id={reply.id} threadId={reply.pk_threads_id} author={reply.author} timestring={reply.date} replies={reply.replies}>
+            <Comment key={reply.id} id={reply.id} threadId={reply.pk_threads_id} author={reply.author} timestring={reply.created} replies={reply.replies}>
             {reply.body}
             </Comment>
           );
@@ -35,7 +42,7 @@ var Comment = React.createClass({
 
     return (
         <li className="comment">
-          <div className="header"><Link to={"/user/" + encodeURIComponent(this.props.author)}>{this.props.author}</Link> {this.props.timestring}</div>
+          <div className="header"><Link to={"/user/" + encodeURIComponent(this.props.author)}>{this.props.author}</Link> ~ {this.formatDate(this.props.timestring)}</div>
           <div className="body">{this.props.children}</div>
           <div className="options"><a href="" onClick={this.showReply}>Reply</a></div>
           <div className="newReply" style={styles}>
