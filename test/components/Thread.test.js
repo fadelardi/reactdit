@@ -7,7 +7,6 @@ var render = enzyme.render;
 var moment = require('moment');
 
 var Thread = require('../../src/js/components/Thread.js');
-var Link = require('react-router').Link;
 
 describe('<Thread />', function() {
   var wrapper = render(<Thread totalComments="5" title="topkek" type={THREAD_TYPE_LINK} timestring={moment()} author="test" forum="testforum" />);
@@ -16,11 +15,11 @@ describe('<Thread />', function() {
     expect(wrapper.text()).to.contain('5 comment(s)');
   });
 
-  it('contains text "submitted date by test to testforum"', function() {
+  it('contains text "submitted a few seconds ago by test to testforum"', function() {
     expect(wrapper.text()).to.contain('submitted a few seconds ago by test to testforum');
   });
 
-  it('contains text "submitted date by test to testforum"', function() {
+  it('contains text "submitted a few seconds ago by test to testforum"', function() {
     expect(wrapper.text()).to.contain('submitted a few seconds ago by test to testforum');
   });
 
