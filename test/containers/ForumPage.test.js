@@ -10,9 +10,9 @@ var ForumPage = require('../../src/js/containers/ForumPage').ForumPage;
 
 describe('<ForumPage />', function() {
   var threads = [];
-  var params = {}
+  var params = {};
   var dispatch = function() {};
-  var getThreadList = sinon.spy(threadActions, 'getThreadList')
+  var getThreadList = sinon.spy(threadActions, 'getThreadList');
   var wrapper = shallow(<ForumPage threads={threads} loading={true} dispatch={dispatch} params={params} />);
 
   it('should dispatch getThreadList', function() {
