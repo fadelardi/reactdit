@@ -4,6 +4,13 @@ var Comment = require('./Comment');
 var CommentList = React.createClass({
   getCommentList: function() {
     var comments = this.props.comments;
+
+    if (comments.length == 0) {
+      return (
+        <div className="error">There are no comments here</div>
+      );
+    }
+
     var commentLis = comments.map(function(comment) {
       return (
         <Comment key={comment.id} id={comment.id} threadId={comment.pk_threads_id} author={comment.author} timestring={comment.created} replies={comment.replies}>

@@ -42,4 +42,11 @@ describe('<CommentList />', function() {
   it('will find an error message', function() {
     expect(wrapper3.text()).contains('could not be loaded');
   });
+
+  comments = [];
+  var wrapper4 = shallow(<CommentList comments={comments} loaded={true} />);
+
+  it('will find "no comments here" message', function() {
+    expect(wrapper4.text()).contains('There are no comments here');
+  });
 });
