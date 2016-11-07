@@ -11,7 +11,7 @@ var mapStateToProps = function(store) {
   };
 };
 
-var AddComment = React.createClass({
+module.exports.AddComment = React.createClass({
   getInitialState: function() {
     return {text: ''};
   },
@@ -57,4 +57,4 @@ var AddComment = React.createClass({
   }
 });
 
-module.exports = connect(mapStateToProps)(AddComment);
+module.exports.default = connect(mapStateToProps)(this.AddComment);

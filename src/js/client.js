@@ -10,7 +10,7 @@ var Store = require('./store');
 
 //Containers
 var ForumPage = require('./containers/ForumPage').default;
-var ThreadPage = require('./containers/ThreadPage');
+var ThreadPage = require('./containers/ThreadPage').default;
 var UserPage = require('./containers/UserPage').default;
 var NewThreadPage = require('./containers/NewThreadPage').default;
 

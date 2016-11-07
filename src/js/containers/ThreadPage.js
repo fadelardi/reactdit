@@ -3,7 +3,7 @@ var connect = require('react-redux').connect;
 var Header = require('../components/Header');
 var CommentList = require('../components/CommentList');
 var ThreadDetail = require('../components/ThreadDetail');
-var AddComment = require('./AddComment');
+var AddComment = require('./AddComment').default;
 var threadActions = require('../actions/threadActions');
 var commentActions = require('../actions/commentActions');
 
@@ -18,7 +18,7 @@ var mapStateToProps = function(store) {
   };
 };
 
-var ThreadPage = React.createClass({
+module.exports.ThreadPage = React.createClass({
   componentWillMount: function() {
       this.props.dispatch(threadActions.getThread(this.props.params.id));
       this.props.dispatch(commentActions.getCommentList(this.props.params.id));
@@ -36,4 +36,4 @@ var ThreadPage = React.createClass({
   }
 });
 
-module.exports = connect(mapStateToProps)(ThreadPage);
+module.exports.default = connect(mapStateToProps)(this.ThreadPage);

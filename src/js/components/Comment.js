@@ -1,6 +1,6 @@
 var React = require('react');
 var Link = require('react-router').Link;
-var AddComment = require('../containers/AddComment');
+var AddComment = require('../containers/AddComment').default;
 var moment = require('moment');
 
 
