@@ -3,7 +3,7 @@ var UserBox = React.createClass({
   render: function() {
     return (
       <div className="userBox">
-        {this.props.username}
+        <i className="fa fa-user" aria-hidden="true"></i> {this.props.username}
       </div>
     );
   }
