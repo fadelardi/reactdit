@@ -20,9 +20,9 @@ var Thread = React.createClass({
   render: function() {
     return (
       <li>
-        <div className="title">{this.titleLink()}</div>
+        <div className="title">{this.titleLink()} ({this.props.type})</div>
         <div>submitted {this.formatDate(this.props.timestring)} by <Link to={"/u/" + encodeURIComponent(this.props.author)}>{this.props.author}</Link> to <Link to={'/f/' + encodeURIComponent(this.props.forum)}>{this.props.forum}</Link></div>
-        <div><Link to={"/t/" + this.props.id}>{this.props.totalComments} comment(s)</Link></div>
+        <div><i className="fa fa-book" aria-hidden="true"></i> <Link to={"/t/" + this.props.id}>{this.props.totalComments} comment(s)</Link></div>
       </li>
     );
   }
