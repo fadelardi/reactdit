@@ -12,7 +12,7 @@ var Store = require('./store');
 var ForumPage = require('./containers/ForumPage').default;
 var ThreadPage = require('./containers/ThreadPage');
 var UserPage = require('./containers/UserPage');
-var NewThreadPage = require('./containers/NewThreadPage');
+var NewThreadPage = require('./containers/NewThreadPage').default;
 
 var app = document.getElementById('app');
 

@@ -13,7 +13,7 @@ var mapStateToProps = function(store) {
   };
 };
 
-var NewThreadPage = withRouter(React.createClass({
+module.exports.NewThreadPage = React.createClass({
   displayName: 'NewThreadPage',
 
   componentDidMount: function() {
@@ -35,6 +35,6 @@ var NewThreadPage = withRouter(React.createClass({
       </div>
     );
   }
-}));
+});
 
-module.exports = connect(mapStateToProps)(NewThreadPage);
+module.exports.default = connect(mapStateToProps)(withRouter(this.NewThreadPage));
