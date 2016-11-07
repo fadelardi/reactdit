@@ -11,7 +11,7 @@ var Store = require('./store');
 //Containers
 var ForumPage = require('./containers/ForumPage').default;
 var ThreadPage = require('./containers/ThreadPage');
-var UserPage = require('./containers/UserPage');
+var UserPage = require('./containers/UserPage').default;
 var NewThreadPage = require('./containers/NewThreadPage').default;
 
 var app = document.getElementById('app');
