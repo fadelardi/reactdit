@@ -42,14 +42,18 @@ var Comment = React.createClass({
 
     return (
         <li className="comment">
-          <div className="header"><Link to={"/user/" + encodeURIComponent(this.props.author)}>{this.props.author}</Link> ~ {this.formatDate(this.props.timestring)}</div>
+          <div className="header">
+            <i className="fa fa-user" aria-hidden="true"></i> <Link to={"/user/" + encodeURIComponent(this.props.author)}>{this.props.author}</Link>
+            &nbsp;
+            <span><i className="fa fa-clock-o" aria-hidden="true"></i> {this.formatDate(this.props.timestring)}</span>
+          </div>
           <div className="body">{this.props.children}</div>
-          <div className="options"><a href="" onClick={this.showReply}>Reply</a></div>
+          <div className="options"><i className="fa fa-reply" aria-hidden="true"></i> <a href="" onClick={this.showReply}>Reply</a></div>
           <div className="newReply" style={styles}>
             <AddComment threadId={this.props.threadId} commentId={this.props.id} />
           </div>
-          <div className="replies">
-            <ul>
+          <div>
+            <ul className="replies">
               {replies}
             </ul>
           </div>

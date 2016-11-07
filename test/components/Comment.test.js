@@ -31,6 +31,6 @@ describe('<Comment />', function() {
   });
 
   it('contains text "~ a few seconds ago"', function() {
-    expect(wrapper.text()).to.contain('~ a few seconds ago');
+    expect(wrapper.text()).to.contain('a few seconds ago');
   });
 });

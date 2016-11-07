@@ -7,7 +7,7 @@ var ThreadDetail = React.createClass({
 
   renderImage: function(content) {
     return (
-      <img id="threadImg" src={content} alt="" />
+      <center><img id="threadImg" src={content} alt="" /></center>
     );
   },
 

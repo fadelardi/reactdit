@@ -12,7 +12,7 @@ var CommentList = React.createClass({
       );
     });
     return (
-      <ul>
+      <ul className="commentList">
         {commentLis}
       </ul>
     );
@@ -20,18 +20,16 @@ var CommentList = React.createClass({
 
   render: function() {
     return (
-      <div className="col-md-12 commentList">
-        <div className="col-md-12">
-          {this.props.loading &&
-            <div className="loading">Loading...</div>
-          }
-          {this.props.error &&
-            <div className="error">The comments of this thread could not be loaded.</div>
-          }
-          {this.props.loaded &&
-            <div className="comments">{this.getCommentList()}</div>
-          }
-        </div>
+      <div>
+        {this.props.loading &&
+          <div className="loading">Loading...</div>
+        }
+        {this.props.error &&
+          <div className="error">The comments of this thread could not be loaded.</div>
+        }
+        {this.props.loaded &&
+          <div className="comments">{this.getCommentList()}</div>
+        }
       </div>
     );
   }

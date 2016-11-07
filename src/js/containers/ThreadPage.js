@@ -26,11 +26,13 @@ module.exports.ThreadPage = React.createClass({
 
   render: function() {
     return (
-      <div className="container">
+      <div>
         <Header user={this.props.user} />
-        <ThreadDetail thread={this.props.thread} />
-        <CommentList comments={this.props.comments} loaded={this.props.loaded} loading={this.props.loading} error={this.props.error} />
-        <AddComment threadId={this.props.params.id} />
+        <div className="col-md-10 col-md-offset-1 content">
+          <ThreadDetail thread={this.props.thread} />
+          <CommentList comments={this.props.comments} loaded={this.props.loaded} loading={this.props.loading} error={this.props.error} />
+          <AddComment threadId={this.props.params.id} />
+        </div>
       </div>
     );
   }

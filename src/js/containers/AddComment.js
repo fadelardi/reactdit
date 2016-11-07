@@ -48,9 +48,9 @@ module.exports.AddComment = React.createClass({
     return (
       <div className="addComment col-md-12">
         <form onSubmit={this.handleSubmit}>
-        <div>Add your comment:</div>
+        <h4>Add your comment:</h4>
         <textarea name="comment" onChange={this.handleChange} value={this.state.text} required />
-        <div><input type="submit" value="Submit post" /></div>
+        <div><input className="btn btn-primary" type="submit" value="Submit post" /></div>
         </form>
       </div>
     );
