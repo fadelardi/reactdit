@@ -8,11 +8,15 @@ module.exports = {
     fixed types, and this will not change, thus avoiding JOINs and other SQL
   */
   THREAD_TYPES: getThreadTypes(),
-  THREAD_TYPE_TEXT: getThreadTypes()[0],
-  THREAD_TYPE_LINK: getThreadTypes()[1],
-  THREAD_TYPE_IMAGE: getThreadTypes()[2]
+  THREAD_TYPE_TEXT: getThreadTypes()[0].name,
+  THREAD_TYPE_LINK: getThreadTypes()[1].name,
+  THREAD_TYPE_IMAGE: getThreadTypes()[2].name
 };
 
 function getThreadTypes() {
-  return ['Text', 'Link', 'Image'];
+  return [
+    { icon: "fa-file-text", name: 'Text' },
+    { icon: "fa-link", name: 'Link' },
+    { icon: "fa-file-image-o", name: 'Image' }
+  ];
 }

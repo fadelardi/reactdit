@@ -67,8 +67,8 @@ var NewThreadForm = React.createClass({
     var self = this;
     return THREAD_TYPES.map(function(type) {
       return(
-        <label key={type} className="radio-inline">
-          <input key={type} name="type" id="type" type="radio" value={type} onChange={self.handleTypeChange} defaultChecked={type == THREAD_TYPE_TEXT}  /> {type}
+        <label key={type.name} className="radio-inline">
+          <input key={type.name} name="type" id="type" type="radio" value={type.name} onChange={self.handleTypeChange} defaultChecked={type.name == THREAD_TYPE_TEXT}  /> <i className={"fa " + type.icon} aria-hidden="true"></i>  {type.name}
         </label>
       );
     });
