@@ -76,7 +76,7 @@ var NewThreadForm = React.createClass({
 
   render: function() {
     return (
-      <div className="container-fluid col-md-10 col-md-offset-1 newThreadForm">
+      <div className="container-fluid col-md-10 col-md-offset-1 content newThreadForm">
         <form onSubmit={this.onSubmit}>
           <h3>New Thread</h3>
           {this.state.error &&

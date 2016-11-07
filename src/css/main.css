@@ -19,11 +19,15 @@ em.appIcon {
   background: url('./img/icon.png');
 }
 
-.threadList {
+.content {
   border: 1px solid #337ab7;
   background-color: #CCCCCC;
   border-radius: 10px;
   padding: 0;
+}
+
+.userPage {
+  padding: 10px;
 }
 
 .threadList ul {
@@ -71,12 +75,6 @@ li.comment .options {
   background-color: #666666;
   border-bottom: 1px solid black;
   margin-bottom: 5px;
-}
-
-.newThreadForm {
-  border: 1px solid #337ab7;
-  border-radius: 10px;
-  background-color: #CCCCCC;
 }
 
 .loading, .error {

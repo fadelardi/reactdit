@@ -1,4 +1,3 @@
-var ANON_ID = require('../config').ANON_ID;
 var React = require('react');
 var connect = require('react-redux').connect;
 var Header = require('../components/Header');
@@ -9,6 +8,7 @@ var withRouter = require('react-router').withRouter;
 
 var mapStateToProps = function(store) {
   return {
+    user: store.user.user,
     forumList: store.forumList.forums
   };
 };
@@ -23,14 +23,14 @@ var NewThreadPage = withRouter(React.createClass({
   },
 
   handleSubmit: function(form) {
-      form.uid = ANON_ID;
+      form.uid = this.props.user.id;
       this.props.dispatch(threadActions.addThread(form, this.props.router));
   },
 
   render: function() {
     return (
       <div>
-        <Header />
+        <Header user={this.props.user} />
         <NewThreadForm handleSubmit={this.handleSubmit} forum={this.props.params.forum} forums={this.props.forumList} />
       </div>
     );

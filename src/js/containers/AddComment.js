@@ -1,10 +1,10 @@
-var ANON_ID = require('../config').ANON_ID;
 var React = require('react');
 var connect = require('react-redux').connect;
 var commentActions = require('../actions/commentActions');
 
 var mapStateToProps = function(store) {
   return {
+    uid: store.user.user.id,
     submitted: store.newComment.submitted,
     error: store.newComment.error,
     added: store.newComment.added
@@ -39,7 +39,7 @@ var AddComment = React.createClass({
     this.props.dispatch(commentActions.addComment({
       id: this.props.threadId,
       parent_id: (typeof this.props.commentId == 'undefined') ? 0 : this.props.commentId,
-      uid: ANON_ID,
+      uid: this.props.uid,
       comment: comment
     }));
   },

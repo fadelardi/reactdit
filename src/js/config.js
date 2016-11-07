@@ -1,8 +1,8 @@
 module.exports = {
   /* URL where the REACTDIT API is */
   API_URL: 'http://localhost:3000',
-  /* ID of the anonymous user, 0 by default */
-  ANON_ID: 0,
+  /* default user */
+  ANON_USER: {id: 0 , name: 'Anonymous'},
   /*
     Types of thread. Ideally this would be stored in the db, but we have three
     fixed types, and this will not change, thus avoiding JOINs and other SQL

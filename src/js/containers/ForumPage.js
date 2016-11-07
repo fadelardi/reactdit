@@ -7,6 +7,7 @@ var withRouter = require('react-router').withRouter;
 
 var mapStateToProps = function(store) {
   return {
+    user: store.user.user,
     threads: store.threadList.threads,
     error: store.threadList.error,
     loading: store.threadList.loading,
@@ -31,7 +32,7 @@ module.exports.ForumPage = React.createClass({
   render: function() {
     return (
       <div>
-        <Header forum={this.props.params.forum} />
+        <Header forum={this.props.params.forum} user={this.props.user} />
         {this.props.loading &&
         <div className="col-md-12 loading">Loading...</div>
         }

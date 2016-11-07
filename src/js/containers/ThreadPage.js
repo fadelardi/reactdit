@@ -9,6 +9,7 @@ var commentActions = require('../actions/commentActions');
 
 var mapStateToProps = function(store) {
   return {
+    user: store.user.user,
     thread: store.thread.thread,
     comments: store.commentList.comments,
     loaded: store.commentList.loaded,
@@ -26,7 +27,7 @@ var ThreadPage = React.createClass({
   render: function() {
     return (
       <div className="container">
-        <Header />
+        <Header user={this.props.user} />
         <ThreadDetail thread={this.props.thread} />
         <CommentList comments={this.props.comments} loaded={this.props.loaded} loading={this.props.loading} error={this.props.error} />
         <AddComment threadId={this.props.params.id} />
