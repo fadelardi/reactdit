@@ -23,6 +23,4 @@ describe('<AddComment />', function() {
     wrapper.find('form').simulate('submit', e);
     expect(dispatch.called).to.equal(false);
   });
-
-  
 });
