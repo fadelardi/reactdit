@@ -1,8 +1,10 @@
 # reactdit
 
-Reddit-like app built with React+Redux (ES5). This application is not ready for production deployment, and it's just meant as a personal project. Reactdit depends on reactdit-api.
+Reddit-like app built with React+Redux (ES5). Reactdit is just a presentational layer, and it depends on [reactdit-api](/reactdit-api) for its backend operations. 
 
-Features
+**Dislaimer!**: this application is not production-ready, nor was it created to actually compete with reddit. It it just a personal project intended for learning purposes. 
+
+## Features
 
 - Frontpage: see threads from all forums, create a thread
 - Anonymous posting
@@ -10,7 +12,7 @@ Features
 - Thread: see comments, post comments
 - Comments: reply to comments
 
-Tech Stack
+## Tech Stack
 
 - ReactJS
 - Redux (promises, thunk)
@@ -20,10 +22,14 @@ Tech Stack
 - Twitter's Bootstrap (CSS only)
 - mocha + enzyme
 
-How to run
+## How to run
 
+```
 npm run dev
+```
 
-How to run tests
+## How to run tests
 
+```
 npm run test
+```
