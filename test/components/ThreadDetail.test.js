@@ -9,12 +9,18 @@ var ThreadDetail = require('../../src/js/components/ThreadDetail');
 describe('<ThreadDetail />', function() {
   var thread = {
     type: THREAD_TYPE_TEXT,
+    title: 'Title',
     content: 'Content'
   };
 
+  var wrapper = shallow(<ThreadDetail thread={thread} />);
+
   it('should find content passed to it as is', function() {
-    var wrapper = shallow(<ThreadDetail thread={thread} />);
     expect(wrapper.text()).to.contain('Content');
+  });
+
+  it('should find title passed to it', function() {
+    expect(wrapper.text()).to.contain('Title');
   });
 
   it('should find id #threadImg', function() {

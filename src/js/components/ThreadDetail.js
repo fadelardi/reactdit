@@ -2,7 +2,9 @@ var React = require('react');
 
 var ThreadDetail = React.createClass({
   renderText: function(content) {
-    return content;
+    return (
+      <div className="text">{content}</div>
+    );
   },
 
   renderImage: function(content) {
@@ -17,6 +19,7 @@ var ThreadDetail = React.createClass({
 
   render: function() {
     var content = this.props.thread.content;
+    var title = this.props.thread.title;
     var type = this.props.thread.type;
     var contentElement;
 
@@ -33,6 +36,7 @@ var ThreadDetail = React.createClass({
 
     return(
       <div className="threadDetail">
+        <div className="title">{title}</div>
         {contentElement}
       </div>
     );

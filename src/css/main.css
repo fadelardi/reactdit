@@ -36,6 +36,17 @@ em.appIcon {
   border-bottom: 1px solid #337ab7;
 }
 
+.threadDetail .title {
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: underline;
+  padding-left: 20px;
+}
+
+.threadDetail .text {
+  padding: 20px;
+}
+
 .threadList ul {
   padding-left: 0px;
   padding-top: 10px;
