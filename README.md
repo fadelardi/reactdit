@@ -2,7 +2,7 @@
 
 Reddit-like app built with React+Redux (ES5). Reactdit is just a presentational layer, and it depends on [reactdit-api](/reactdit-api) for its backend operations. 
 
-**Dislaimer!**: this application is not production-ready, nor was it created to actually compete with reddit. It it just a personal project intended for learning purposes. 
+**Dislaimer**: this application is not production-ready, nor was it created to actually compete with reddit. It it just a personal project intended for learning purposes. 
 
 ## Features
 
