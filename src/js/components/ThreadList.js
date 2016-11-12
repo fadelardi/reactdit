@@ -2,8 +2,16 @@ var React = require('react');
 var Thread = require('./Thread');
 
 var ThreadList = React.createClass({
-  render: function() {
+  getThreads: function() {
     var threads = this.props.threads;
+
+    if (threads.length == 0) {
+      return (
+        <div className="error">
+          No threads in this forum
+        </div>
+      );
+    }
 
     var list = threads.map(function(thread) {
       return (
@@ -12,10 +20,16 @@ var ThreadList = React.createClass({
     });
 
     return (
+      <ul>
+        {list}
+      </ul>
+    );
+  },
+
+  render: function() {
+    return (
       <div className="container-fluid col-md-10 col-md-offset-1 content threadList">
-        <ul>
-          {list}
-        </ul>
+        {this.getThreads()}
       </div>
     );
   }
