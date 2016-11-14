@@ -1,6 +1,7 @@
 var config = require('../config.js');
 var axios = require('axios');
 
+// get specific thread
 module.exports.getThread = function(id) {
   return {
     type: 'FETCH_THREAD',
@@ -8,6 +9,7 @@ module.exports.getThread = function(id) {
   };
 };
 
+// get thread list for a forum/all
 module.exports.getThreadList = function(forum) {
   return {
     type: 'FETCH_THREADS',
@@ -15,6 +17,7 @@ module.exports.getThreadList = function(forum) {
   };
 };
 
+// add thread to forum
 module.exports.addThread = function(data, router) {
   return function(dispatch) {
     dispatch({type: 'ADD_THREAD_PENDING'});

@@ -3,6 +3,7 @@ var UserBox = require('./UserBox');
 var Link = require('react-router').Link;
 
 var Header = React.createClass({
+  // link should be releative to forum we're in
   createNewLink: function(forum) {
     var link = '/new';
     if (typeof forum != 'undefined') {

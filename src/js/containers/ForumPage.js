@@ -14,14 +14,14 @@ var mapStateToProps = function(store) {
     loaded: store.threadList.loaded
   };
 };
-
+// naked component
 module.exports.ForumPage = React.createClass({
   displayName: 'ForumPage',
 
   componentWillMount: function() {
       this.props.dispatch(threadActions.getThreadList());
   },
-
+  // when receiving props, we need to update the list if forum changed
   componentWillReceiveProps: function(nextProps) {
       if (this.props.params.forum != nextProps.params.forum) {
         nextProps.dispatch(threadActions.getThreadList(nextProps.params.forum));
@@ -47,4 +47,5 @@ module.exports.ForumPage = React.createClass({
   }
 });
 
+// connected component
 module.exports.default = connect(mapStateToProps)(withRouter(this.ForumPage));

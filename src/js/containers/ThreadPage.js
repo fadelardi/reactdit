@@ -9,16 +9,23 @@ var commentActions = require('../actions/commentActions');
 
 var mapStateToProps = function(store) {
   return {
+    // current user
     user: store.user.user,
+    // current thread
     thread: store.thread.thread,
+    // list of comments for current thread
     comments: store.commentList.comments,
+    // is the thread loaded?
     loaded: store.commentList.loaded,
+    // is the thread loading?
     loading: store.commentList.loading,
+    // has there been an error when loading the thread?
     error: store.commentList.error
   };
 };
-
+// naked component
 module.exports.ThreadPage = React.createClass({
+  // get thread detail and comments upon mount
   componentWillMount: function() {
       this.props.dispatch(threadActions.getThread(this.props.params.id));
       this.props.dispatch(commentActions.getCommentList(this.props.params.id));
@@ -37,5 +44,5 @@ module.exports.ThreadPage = React.createClass({
     );
   }
 });
-
+// connected component
 module.exports.default = connect(mapStateToProps)(this.ThreadPage);

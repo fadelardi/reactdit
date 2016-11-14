@@ -8,14 +8,16 @@ var withRouter = require('react-router').withRouter;
 
 var mapStateToProps = function(store) {
   return {
+    // current user
     user: store.user.user,
+    // list of forums
     forumList: store.forumList.forums
   };
 };
-
+// naked component
 module.exports.NewThreadPage = React.createClass({
   displayName: 'NewThreadPage',
-
+  // on mount, get forum list
   componentDidMount: function() {
     if (typeof this.props.params.forum == 'undefined') {
       this.props.dispatch(forumActions.getForums());
@@ -36,5 +38,5 @@ module.exports.NewThreadPage = React.createClass({
     );
   }
 });
-
+// connected component
 module.exports.default = connect(mapStateToProps)(withRouter(this.NewThreadPage));

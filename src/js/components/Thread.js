@@ -8,7 +8,7 @@ var Thread = React.createClass({
     var dateString = moment().from(date, true);
     return (dateString != 'Invalid date') ? dateString + ' ago' : 'unknown time ago';
   },
-
+  // title of thread could change behavior according to thread type 
   titleLink: function() {
     if (this.props.type == THREAD_TYPE_LINK) {
       return (<a href={this.props.content} id="link" target="_new">{this.props.title}</a>);

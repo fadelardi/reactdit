@@ -8,12 +8,12 @@ var Comment = React.createClass({
   getInitialState: function() {
     return {showReply: false};
   },
-
+  // when next props are passed, hide reply box
   componentWillReceiveProps: function(nextProps) {
     this.setState({showReply: false});
     this.setState(nextProps);
   },
-
+  // flag for showing reply box
   showReply: function(e) {
     e.preventDefault();
     this.setState({showReply: true});
@@ -30,6 +30,7 @@ var Comment = React.createClass({
     };
 
     var replies = '';
+    // recursiveness here: comments will have comments (replies) inside of them
     if (this.props.replies.length > 0 ) {
         replies = this.props.replies.map(function(reply) {
           return (

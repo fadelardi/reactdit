@@ -4,13 +4,14 @@ var React = require('react');
 var ForumSelector = require('./ForumSelector');
 
 var NewThreadForm = React.createClass({
+  // by default type should be text
   getInitialState: function() {
     return {
       error: false,
-      type: 'TXT'
+      type: THREAD_TYPE_TEXT
     };
   },
-
+  // update state when changing type
   handleTypeChange: function(e) {
     this.setState({type: e.target.value});
   },
@@ -45,7 +46,7 @@ var NewThreadForm = React.createClass({
       (typeof form.content.value != 'undefined' && form.content.value != '' ||
       typeof form.type.value != 'undefined' && form.type.value != '');
   },
-
+  // generate forum list
   forumField: function (forum) {
     if (typeof forum == 'undefined') {
       return (

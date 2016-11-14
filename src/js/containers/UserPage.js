@@ -4,10 +4,11 @@ var connect = require('react-redux').connect;
 
 var mapStateToProps = function(store) {
   return {
+    // current user
     user: store.user.user
   };
 };
-
+// naked component
 module.exports.UserPage = React.createClass({
   render: function() {
     return (
@@ -21,5 +22,5 @@ module.exports.UserPage = React.createClass({
     );
   }
 });
-
+// connected component
 module.exports.default = connect(mapStateToProps)(this.UserPage);

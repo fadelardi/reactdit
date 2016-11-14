@@ -16,7 +16,7 @@ var ThreadDetail = React.createClass({
   renderLink: function() {
     return;
   },
-
+  // render content based on type of thread
   render: function() {
     var content = this.props.thread.content;
     var title = this.props.thread.title;
